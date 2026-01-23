@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unflat - Earn 4-7% on your savings. Verify every cent.</title>
+    <meta name="description" content="Savings powered by DeFi. Earn 4-7% APY, no crypto knowledge needed. You relax, your money works. Patience pays. Transparency proves it.">
+    <meta property="og:title" content="Unflat - Earn 4-7% on your savings">
+    <meta property="og:description" content="Savings powered by DeFi. No crypto knowledge needed. You relax, your money works.">
+    <meta property="og:image" content="assets/logo_full.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo_icon.png">
+    <link rel="apple-touch-icon" href="assets/logo_icon.png">
+
+    <!-- Waitlist Widget CSS -->
+    <link rel="stylesheet" type="text/css" href="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.css"/>
+
+    <!-- Google Fonts Fallback -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==================== CSS VARIABLES ==================== */
+        :root {
+            --primary-blue: #200191;
+            --light-blue: #6198FF;
+            --background: #F5F6FF;
+            --grey: #484848;
+            --black: #00041B;
+            --white: #FFFFFF;
+
+            --font-family: 'PP Frama', 'Inter', system-ui, -apple-system, sans-serif;
+            --border-radius: 20px;
+            --border-radius-sm: 12px;
+            --shadow: 0 4px 24px rgba(32, 1, 145, 0.08);
+            --shadow-hover: 0 8px 32px rgba(32, 1, 145, 0.12);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ==================== RESET & BASE ==================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background);
+            color: var(--black);
+            line-height: 1.6;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ==================== TYPOGRAPHY ==================== */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--black);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+        }
+
+        p {
+            color: var(--grey);
+        }
+
+        .highlight {
+            font-style: italic;
+            font-weight: 700;
+            color: var(--light-blue);
+        }
+
+        /* ==================== LAYOUT ==================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        @media (min-width: 768px) {
+            section {
+                padding: 120px 0;
+            }
+        }
+
+        /* ==================== ANIMATIONS ==================== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Curve Animation */
+        @keyframes drawCurve {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .curve-animated {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+        }
+
+        .curve-animated.animate {
+            animation: drawCurve 2s ease forwards;
+        }
+
+        /* ==================== HEADER ==================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(245, 246, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 16px 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        @media (min-width: 768px) {
+            .logo img {
+                height: 40px;
+            }
+        }
+
+        nav {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                display: flex;
+                align-items: center;
+                gap: 40px;
+            }
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--grey);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #150066;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(32, 1, 145, 0.3);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--black);
+            transition: var(--transition);
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-toggle {
+                display: none;
+            }
+        }
+
+        .header-cta {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .header-cta {
+                display: inline-flex;
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 12px 0;
+            font-weight: 500;
+            color: var(--grey);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .mobile-menu .btn {
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        /* ==================== HERO ==================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg-curve {
+            position: absolute;
+            right: -200px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 800px;
+            height: 600px;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        @media (min-width: 768px) {
+            .hero-bg-curve {
+                right: -100px;
+                opacity: 0.2;
+            }
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            margin-bottom: 24px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            max-width: 600px;
+            margin: 0 auto 48px;
+            color: var(--grey);
+        }
+
+        /* Waitlist Container Styling */
+        .waitlist-wrapper {
+            margin: 40px auto;
+            max-width: 500px;
+        }
+
+        /* Tier Box */
+        .tier-box {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 32px;
+            margin-top: 48px;
+            box-shadow: var(--shadow);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tier-box h3 {
+            text-align: center;
+            margin-bottom: 24px;
+            color: var(--black);
+        }
+
+        .tier-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .tier-item:last-child {
+            border-bottom: none;
+        }
+
+        .tier-emoji {
+            font-size: 1.5rem;
+        }
+
+        .tier-info {
+            flex: 1;
+        }
+
+        .tier-info strong {
+            display: block;
+            color: var(--black);
+        }
+
+        .tier-info span {
+            font-size: 0.9rem;
+            color: var(--grey);
+        }
+
+        .tier-boost {
+            font-weight: 700;
+            color: var(--light-blue);
+        }
+
+        /* ==================== NUMBERS/GRAPH SECTION ==================== */
+        .numbers-section {
+            text-align: center;
+        }
+
+        .numbers-section h2 {
+            margin-bottom: 16px;
+        }
+
+        .numbers-subtitle {
+            font-size: 1.25rem;
+            color: var(--grey);
+            margin-bottom: 48px;
+        }
+
+        .graph-container {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px 20px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .graph-container {
+                padding: 40px;
+            }
+        }
+
+        .graph-svg {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+        }
+
+        .graph-legend {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        @media (min-width: 768px) {
+            .graph-legend {
+                gap: 40px;
+            }
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .legend-line {
+            width: 40px;
+            height: 3px;
+            border-radius: 2px;
+        }
+
+        .legend-line.bank {
+            background: var(--grey);
+        }
+
+        .legend-line.unflat {
+            background: var(--light-blue);
+        }
+
+        /* ==================== HOW IT WORKS ==================== */
+        .how-it-works {
+            text-align: center;
+        }
+
+        .how-it-works h2 {
+            margin-bottom: 64px;
+        }
+
+        .steps-grid {
+            display: grid;
+            gap: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .steps-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+            }
+        }
+
+        .step-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px 32px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .step-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--light-blue);
+            opacity: 0.3;
+            margin-bottom: 16px;
+        }
+
+        .step-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 24px;
+        }
+
+        .step-card h3 {
+            margin-bottom: 12px;
+            color: var(--black);
+        }
+
+        .step-card p {
+            font-size: 0.95rem;
+        }
+
+        /* ==================== WHAT IS UNFLAT ==================== */
+        .what-is {
+            text-align: center;
+        }
+
+        .what-is h2 {
+            margin-bottom: 32px;
+        }
+
+        .what-is-content {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        /* ==================== TRUST SECTION ==================== */
+        .trust-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--black) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(97, 152, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .trust-section h2 {
+            margin-bottom: 24px;
+            position: relative;
+            color: var(--white);
+        }
+
+        .trust-section p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ==================== WHY UNFLAT ==================== */
+        .why-unflat {
+            text-align: center;
+        }
+
+        .why-unflat h2 {
+            margin-bottom: 64px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .benefit-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 32px;
+            text-align: left;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 8px;
+            color: var(--black);
+        }
+
+        .benefit-card p {
+            font-size: 0.95rem;
+        }
+
+        /* Center last row on large screens */
+        @media (min-width: 1024px) {
+            .benefits-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .benefit-card:nth-child(4) {
+                grid-column: 1 / 2;
+                margin-left: auto;
+                margin-right: 0;
+                max-width: calc(100% - 12px);
+            }
+
+            .benefit-card:nth-child(5) {
+                grid-column: 3 / 4;
+                margin-left: 0;
+                margin-right: auto;
+                max-width: calc(100% - 12px);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .benefits-grid-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .benefits-row {
+                display: flex;
+                justify-content: center;
+                gap: 24px;
+            }
+
+            .benefits-row .benefit-card {
+                flex: 0 0 calc(33.333% - 16px);
+                max-width: calc(33.333% - 16px);
+            }
+
+            .benefits-row-bottom {
+                justify-content: center;
+            }
+
+            .benefits-row-bottom .benefit-card {
+                flex: 0 0 calc(33.333% - 16px);
+                max-width: calc(33.333% - 16px);
+            }
+        }
+
+        /* ==================== FAQ ==================== */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--border-radius-sm);
+            margin-bottom: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px;
+            background: none;
+            border: none;
+            text-align: left;
+            font-family: inherit;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--black);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            color: var(--primary-blue);
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 24px 24px;
+            color: var(--grey);
+            line-height: 1.7;
+        }
+
+        /* ==================== FINAL CTA ==================== */
+        .final-cta {
+            text-align: center;
+            background: var(--white);
+        }
+
+        .final-cta h2 {
+            margin-bottom: 40px;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: var(--background);
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            margin-bottom: 16px;
+        }
+
+        .footer-logo img {
+            height: 36px;
+        }
+
+        .footer-motto {
+            color: var(--grey);
+            font-size: 1rem;
+            margin-bottom: 32px;
+            font-style: italic;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .footer-links a {
+            color: var(--grey);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .footer-copyright {
+            color: var(--grey);
+            font-size: 0.85rem;
+        }
+
+        /* ==================== WAITLIST WIDGET OVERRIDES ==================== */
+        #getWaitlistContainer {
+            font-family: var(--font-family) !important;
+        }
+
+        #getWaitlistContainer input {
+            border-radius: var(--border-radius-sm) !important;
+            border: 2px solid rgba(32, 1, 145, 0.1) !important;
+            padding: 14px 16px !important;
+            font-size: 1rem !important;
+            transition: var(--transition) !important;
+        }
+
+        #getWaitlistContainer input:focus {
+            border-color: var(--light-blue) !important;
+            outline: none !important;
+            box-shadow: 0 0 0 4px rgba(97, 152, 255, 0.1) !important;
+        }
+
+        #getWaitlistContainer button {
+            background: var(--primary-blue) !important;
+            border-radius: var(--border-radius-sm) !important;
+            padding: 14px 28px !important;
+            font-weight: 600 !important;
+            font-size: 1rem !important;
+            transition: var(--transition) !important;
+        }
+
+        #getWaitlistContainer button:hover {
+            background: #150066 !important;
+            transform: translateY(-2px) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">
+                    <img src="assets/logo_full.png" alt="Unflat">
+                </a>
+
+                <nav>
+                    <a href="#how-it-works">How it works</a>
+                    <a href="#faq">FAQ</a>
+                </nav>
+
+                <a href="#hero-waitlist" class="btn btn-primary header-cta">Join Waitlist</a>
+
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#how-it-works">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="#hero-waitlist" class="btn btn-primary">Join Waitlist</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Background Curve SVG -->
+        <svg class="hero-bg-curve" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="curve-animated" d="M0,550 Q100,540 200,500 Q350,420 450,300 Q550,180 650,80 Q700,30 800,0"
+                  stroke="#6198FF" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M650,80 Q700,30 800,0"
+                  stroke="#6198FF" stroke-width="4" fill="none" stroke-dasharray="12,8" stroke-linecap="round" opacity="0.6"/>
+        </svg>
+
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Earn 4-7% on your savings.<br><span class="highlight">Verify</span> every cent.</h1>
+                <p class="hero-subtitle">Savings powered by DeFi. No crypto knowledge needed. You <span class="highlight">relax</span>, your money works.</p>
+
+                <div class="waitlist-wrapper" id="hero-waitlist">
+                    <div id="getWaitlistContainer" data-waitlist_id="32433" data-widget_type="WIDGET_3"></div>
+                </div>
+
+                <div class="tier-box fade-in">
+                    <h3>The earlier you join, the more you earn.</h3>
+                    <div class="tier-item">
+                        <span class="tier-emoji">🥇</span>
+                        <div class="tier-info">
+                            <strong>First 500</strong>
+                            <span>Early believers</span>
+                        </div>
+                        <span class="tier-boost">+2% APY boost</span>
+                    </div>
+                    <div class="tier-item">
+                        <span class="tier-emoji">🥈</span>
+                        <div class="tier-info">
+                            <strong>Next 1,500</strong>
+                            <span>Early adopters</span>
+                        </div>
+                        <span class="tier-boost">+1.5% boost</span>
+                    </div>
+                    <div class="tier-item">
+                        <span class="tier-emoji">🥉</span>
+                        <div class="tier-info">
+                            <strong>Next 3,000</strong>
+                            <span>Early supporters</span>
+                        </div>
+                        <span class="tier-boost">+1% boost</span>
+                    </div>
+                    <div class="tier-item">
+                        <span class="tier-emoji">🎁</span>
+                        <div class="tier-info">
+                            <strong>Invite friends</strong>
+                            <span>Share the savings</span>
+                        </div>
+                        <span class="tier-boost">+0.5% each</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Numbers/Graph Section -->
+    <section class="numbers-section">
+        <div class="container">
+            <div class="fade-in">
+                <h2>4-7% APY vs 0.5% at your bank.</h2>
+                <p class="numbers-subtitle">Set it, forget it, watch it <span class="highlight">grow</span>.</p>
+            </div>
+
+            <div class="graph-container fade-in" id="graph-container">
+                <svg class="graph-svg" viewBox="0 0 700 280" preserveAspectRatio="xMidYMid meet">
+                    <!-- Grid lines -->
+                    <line x1="50" y1="240" x2="650" y2="240" stroke="#E0E0E0" stroke-width="1"/>
+                    <line x1="50" y1="180" x2="650" y2="180" stroke="#E0E0E0" stroke-width="1" stroke-dasharray="4"/>
+                    <line x1="50" y1="120" x2="650" y2="120" stroke="#E0E0E0" stroke-width="1" stroke-dasharray="4"/>
+                    <line x1="50" y1="60" x2="650" y2="60" stroke="#E0E0E0" stroke-width="1" stroke-dasharray="4"/>
+
+                    <!-- Y-axis labels -->
+                    <text x="40" y="244" text-anchor="end" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">$10k</text>
+                    <text x="40" y="184" text-anchor="end" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">$11k</text>
+                    <text x="40" y="124" text-anchor="end" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">$12k</text>
+                    <text x="40" y="64" text-anchor="end" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">$14k+</text>
+
+                    <!-- X-axis labels -->
+                    <text x="50" y="260" text-anchor="middle" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">Year 0</text>
+                    <text x="200" y="260" text-anchor="middle" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">Year 2</text>
+                    <text x="350" y="260" text-anchor="middle" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">Year 4</text>
+                    <text x="500" y="260" text-anchor="middle" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">Year 6</text>
+                    <text x="650" y="260" text-anchor="middle" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">Year 8</text>
+
+                    <!-- Bank line (0.5% APY - almost flat) -->
+                    <path id="bankLine" d="M50,240 L200,235 L350,230 L500,225 L650,220"
+                          stroke="#484848" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+                    <!-- Unflat curve (5.5% APY average - exponential growth) -->
+                    <path id="unflatCurve" class="curve-animated" d="M50,240 Q150,230 250,200 Q350,150 450,90 Q550,40 650,20"
+                          stroke="#6198FF" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+                    <!-- Projected portion (dashed) -->
+                    <path d="M500,60 Q575,35 650,20"
+                          stroke="#6198FF" stroke-width="4" fill="none" stroke-dasharray="10,6" stroke-linecap="round"/>
+
+                    <!-- Data points -->
+                    <circle cx="650" cy="220" r="6" fill="#484848"/>
+                    <circle cx="650" cy="20" r="8" fill="#6198FF"/>
+
+                    <!-- Labels -->
+                    <text x="658" y="215" fill="#484848" font-size="13" font-weight="600" font-family="Inter, system-ui, sans-serif">$10.4k</text>
+                    <text x="658" y="40" fill="#6198FF" font-size="14" font-weight="700" font-family="Inter, system-ui, sans-serif">$15.5k+</text>
+                </svg>
+
+                <div class="graph-legend">
+                    <div class="legend-item">
+                        <span class="legend-line bank"></span>
+                        <span>Traditional Bank (0.5% APY)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-line unflat"></span>
+                        <span>Unflat (4-7% APY)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="fade-in">How it works</h2>
+
+            <div class="steps-grid">
+                <div class="step-card fade-in">
+                    <div class="step-number">01</div>
+                    <svg class="step-icon" viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="28" stroke="#6198FF" stroke-width="2" fill="none"/>
+                        <path d="M32 18v28M22 32h20" stroke="#6198FF" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <h3>Deposit</h3>
+                    <p>Connect your bank or send crypto. No minimum.</p>
+                </div>
+
+                <div class="step-card fade-in">
+                    <div class="step-number">02</div>
+                    <svg class="step-icon" viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="28" stroke="#6198FF" stroke-width="2" fill="none"/>
+                        <path d="M20 38 Q32 20 44 38" stroke="#6198FF" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <circle cx="32" cy="28" r="4" fill="#6198FF"/>
+                    </svg>
+                    <h3>Earn & <span class="highlight">Relax</span></h3>
+                    <p>Your money works 24/7. You don't have to.</p>
+                </div>
+
+                <div class="step-card fade-in">
+                    <div class="step-number">03</div>
+                    <svg class="step-icon" viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="28" stroke="#6198FF" stroke-width="2" fill="none"/>
+                        <path d="M24 32h16M36 24l8 8-8 8" stroke="#6198FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h3>Withdraw</h3>
+                    <p>Take it out anytime. No fees, no lockups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Unflat -->
+    <section class="what-is">
+        <div class="container">
+            <div class="fade-in">
+                <h2>What is Unflat?</h2>
+                <p class="what-is-content">
+                    A savings app that earns you 4-7% APY using DeFi lending protocols. Your money stays yours — we never hold it. You <span class="highlight">relax</span> while your savings grow. Everything is transparent and verifiable on the blockchain.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="fade-in">
+                <h2>Please don't trust us.<br><span class="highlight">Verify</span> what we're telling you.</h2>
+                <p>Every transaction is on-chain. Check it yourself, anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Unflat -->
+    <section class="why-unflat">
+        <div class="container">
+            <h2 class="fade-in">Why Unflat?</h2>
+
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Higher returns</h3>
+                    <p>4-7% APY vs 0.5% at traditional banks</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">😌</div>
+                    <h3>Zero effort</h3>
+                    <p>You <span class="highlight">relax</span>, your money works 24/7</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🔍</div>
+                    <h3>Full transparency</h3>
+                    <p>Every transaction visible on-chain</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🔐</div>
+                    <h3>You stay in control</h3>
+                    <p>Non-custodial — your money, your wallet</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">✨</div>
+                    <h3>No crypto skills needed</h3>
+                    <p>We handle the complexity, you see the results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <div class="faq-section">
+                <h2 class="fade-in">FAQ</h2>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        Do I need to know crypto?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            No. Unflat handles everything. You just deposit, <span class="highlight">relax</span>, and withdraw when you want.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        Is this a bank?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            No. Unflat connects you to DeFi lending protocols. Different product, different risk profile — that's why we prioritize transparency.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        How much can I earn?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Currently 4-7% APY, depending on market conditions. Way more than your bank's 0.5%.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        Is my money locked?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            No. Withdraw anytime, no fees.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        How can I verify?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Every transaction is recorded on the blockchain. You can check your funds anytime using your wallet address.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        Do I need to do anything after depositing?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            No. That's the point. You <span class="highlight">relax</span>, your money works for you automatically.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="fade-in">
+                <h2>The earlier you join, the more you earn.</h2>
+                <div class="waitlist-wrapper">
+                    <div id="getWaitlistContainer" data-waitlist_id="32433" data-widget_type="WIDGET_3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="assets/logo_full.png" alt="Unflat">
+            </div>
+            <p class="footer-motto">Patience pays. Transparency proves it.</p>
+            <div class="footer-links">
+                <a href="#how-it-works">How it works</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+                <a href="#">Cookies</a>
+                <a href="#">Risk</a>
+            </div>
+            <p class="footer-copyright">&copy; 2025 Unflat</p>
+        </div>
+    </footer>
+
+    <!-- Waitlist Widget Script -->
+    <script src="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.js"></script>
+
+    <script>
+        // ==================== HEADER SCROLL EFFECT ====================
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ==================== MOBILE MENU ====================
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // ==================== SMOOTH SCROLL ====================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ==================== FADE IN ANIMATION ====================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ==================== FAQ ACCORDION ====================
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const answer = item.querySelector('.faq-answer');
+                const isActive = item.classList.contains('active');
+
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                    }
+                });
+
+                // Toggle current item
+                if (isActive) {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = null;
+                } else {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+
+        // ==================== GRAPH ANIMATION ====================
+        const graphObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const curves = entry.target.querySelectorAll('.curve-animated');
+                    curves.forEach(curve => {
+                        curve.classList.add('animate');
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const graphContainer = document.getElementById('graph-container');
+        if (graphContainer) {
+            graphObserver.observe(graphContainer);
+        }
+
+        // Also trigger hero curve animation on load
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.hero-bg-curve .curve-animated').forEach(curve => {
+                setTimeout(() => {
+                    curve.classList.add('animate');
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
