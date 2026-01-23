@@ -24,50 +24,7 @@
     #getWaitlistContainer, #getWaitlistContainerFooter {
       width: 100%;
       max-width: 450px;
-      margin: 2rem auto;
-    }
-
-    /* Desktop */
-    @media (min-width: 992px) {
-      #getWaitlistContainer, #getWaitlistContainerFooter {
-        max-width: 500px;
-      }
-
-      /* Widget layout fix */
-      #getWaitlistContainer .gw-widget,
-      #getWaitlistContainerFooter .gw-widget {
-        width: 100% !important;
-      }
-
-      #getWaitlistContainer input[type="email"],
-      #getWaitlistContainerFooter input[type="email"] {
-        font-size: 16px !important;
-        padding: 14px 16px !important;
-      }
-
-      #getWaitlistContainer button,
-      #getWaitlistContainerFooter button {
-        font-size: 16px !important;
-        padding: 14px 24px !important;
-      }
-    }
-
-    /* Brand colors Unflat */
-    #getWaitlistContainer button,
-    #getWaitlistContainerFooter button {
-      background-color: #200191 !important;
-      border-radius: 8px !important;
-    }
-
-    #getWaitlistContainer button:hover,
-    #getWaitlistContainerFooter button:hover {
-      background-color: #6198FF !important;
-    }
-
-    #getWaitlistContainer input[type="email"],
-    #getWaitlistContainerFooter input[type="email"] {
-      border-radius: 8px !important;
-      border: 1px solid #484848 !important;
+      margin: 0.5rem auto 1.5rem auto;
     }
 
     /* Hide branding */
@@ -92,15 +49,39 @@
       box-shadow: none !important;
     }
 
-    /* Button styling */
+    /* Input styling - all screens */
+    #getWaitlistContainer input[type="email"],
+    #getWaitlistContainerFooter input[type="email"] {
+      border-radius: 8px !important;
+      border: 1px solid #484848 !important;
+      background: rgba(0, 4, 27, 0.5) !important;
+      color: #f5f6ff !important;
+      font-size: 14px !important;
+      padding: 12px 14px !important;
+    }
+
+    /* Button styling - all screens */
     #getWaitlistContainer button,
     #getWaitlistContainerFooter button {
+      background: #200191 !important;
+      background-color: #200191 !important;
+      border: none !important;
+      border-radius: 8px !important;
+      color: #f5f6ff !important;
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
       white-space: nowrap !important;
-      padding: 10px 16px !important;
-      font-size: 13px !important;
+      padding: 12px 18px !important;
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      cursor: pointer !important;
+    }
+
+    #getWaitlistContainer button:hover,
+    #getWaitlistContainerFooter button:hover {
+      background: #6198FF !important;
+      background-color: #6198FF !important;
     }
 
     /* Social proof */
@@ -109,8 +90,104 @@
       color: rgba(245, 246, 255, 0.75);
       font-size: 14px;
       font-weight: 400;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       letter-spacing: 0.02em;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 767px) {
+      /* Parent container */
+      .div-block-8 {
+        width: 100% !important;
+        padding: 0 16px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+      }
+
+      #getWaitlistContainer, #getWaitlistContainerFooter {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 16px 0 1rem 0 !important;
+        box-sizing: border-box !important;
+      }
+
+      #getWaitlistContainer > div,
+      #getWaitlistContainerFooter > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 0 !important;
+      }
+
+      .social-proof {
+        margin-bottom: 0.25rem;
+      }
+
+      /* Align input and button side by side - vertically centered */
+      #getWaitlistContainer .gw-flex,
+      #getWaitlistContainerFooter .gw-flex,
+      #getWaitlistContainer .gw-flex-row,
+      #getWaitlistContainerFooter .gw-flex-row,
+      #getWaitlistContainer [class*="gw-flex"],
+      #getWaitlistContainerFooter [class*="gw-flex"],
+      #getWaitlistContainer form,
+      #getWaitlistContainerFooter form {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 6px !important;
+        width: 100% !important;
+      }
+
+      /* Input field - no fixed height, natural sizing */
+      #getWaitlistContainer input[type="email"],
+      #getWaitlistContainerFooter input[type="email"],
+      #getWaitlistContainer input,
+      #getWaitlistContainerFooter input {
+        flex: 1 !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        font-size: 13px !important;
+        padding: 8px 10px !important;
+        height: auto !important;
+        line-height: 1.4 !important;
+      }
+
+      /* Button - smaller than input, vertically centered */
+      #getWaitlistContainer button,
+      #getWaitlistContainerFooter button {
+        flex-shrink: 0 !important;
+        box-sizing: border-box !important;
+        font-size: 11px !important;
+        padding: 6px 12px !important;
+        white-space: nowrap !important;
+        height: auto !important;
+        line-height: 1.4 !important;
+        margin: 2px 0 !important;
+      }
+    }
+
+    /* Desktop styles */
+    @media (min-width: 992px) {
+      #getWaitlistContainer, #getWaitlistContainerFooter {
+        max-width: 500px;
+        margin: 1rem auto 2rem auto;
+      }
+
+      #getWaitlistContainer input[type="email"],
+      #getWaitlistContainerFooter input[type="email"] {
+        font-size: 16px !important;
+        padding: 14px 16px !important;
+      }
+
+      #getWaitlistContainer button,
+      #getWaitlistContainerFooter button {
+        font-size: 16px !important;
+        padding: 14px 24px !important;
+      }
     }
   </style>
 </head>
@@ -129,6 +206,7 @@
     <div id="getWaitlistContainer" data-waitlist_id="32433" data-widget_type="WIDGET_3"></div>
     <div class="div-block-6 card">
       <div class="div-block-5">
+        <div class="h2 light" style="font-size: 14px; opacity: 0.7; margin-bottom: 4px;">Join early, earn more</div>
         <div class="h1-image card" style="font-size: 24px; font-weight: 600;">Earn up to 10.5% APY</div>
       </div>
       <div class="div-block-5">
