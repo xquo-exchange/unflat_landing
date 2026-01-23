@@ -3,45 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unflat - DeFi Yields, Simplified</title>
-    <meta name="description" content="The easiest way to earn yield on your crypto. No complexity, no stress. Join the waitlist for early access.">
-    <meta name="keywords" content="DeFi, crypto, yield, staking, passive income, cryptocurrency, blockchain">
+    <title>Unflat - Earn 4-7% on your savings. Verify every cent.</title>
+    <meta name="description" content="Savings powered by DeFi. Earn 4-7% APY, no crypto knowledge needed. You relax, your money works. Patience pays. Transparency proves it.">
+    <meta property="og:title" content="Unflat - Earn 4-7% on your savings">
+    <meta property="og:description" content="Savings powered by DeFi. No crypto knowledge needed. You relax, your money works.">
+    <meta property="og:image" content="assets/logo_full.png">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Unflat - DeFi Yields, Simplified">
-    <meta property="og:description" content="The easiest way to earn yield on your crypto. No complexity, no stress.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://unflat.io">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo_icon.png">
+    <link rel="apple-touch-icon" href="assets/logo_icon.png">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Unflat - DeFi Yields, Simplified">
-    <meta name="twitter:description" content="The easiest way to earn yield on your crypto. No complexity, no stress.">
-
-    <!-- Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- GetWaitlist CSS -->
+    <!-- Waitlist Widget CSS -->
     <link rel="stylesheet" type="text/css" href="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.css"/>
 
+    <!-- Google Fonts Fallback -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        /* CSS Custom Properties */
+        /* ==================== CSS VARIABLES ==================== */
         :root {
-            --primary: #200191;
-            --accent: #6198FF;
-            --bg-light: #F5F6FF;
-            --text-dark: #484848;
-            --bg-dark: #00041B;
-            --bg-card: #0a0a2e;
-            --text-light: #ffffff;
-            --text-muted: #a0a0b0;
-            --gradient-primary: linear-gradient(135deg, #200191 0%, #6198FF 100%);
-            --glow-accent: 0 0 40px rgba(97, 152, 255, 0.3);
+            --primary-blue: #200191;
+            --light-blue: #6198FF;
+            --background: #F5F6FF;
+            --grey: #484848;
+            --black: #00041B;
+            --white: #FFFFFF;
+
+            --font-family: 'PP Frama', 'Inter', system-ui, -apple-system, sans-serif;
+            --border-radius: 20px;
+            --border-radius-sm: 12px;
+            --shadow: 0 4px 24px rgba(32, 1, 145, 0.08);
+            --shadow-hover: 0 8px 32px rgba(32, 1, 145, 0.12);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Reset and Base */
+        /* ==================== RESET & BASE ==================== */
         *, *::before, *::after {
             margin: 0;
             padding: 0;
@@ -53,965 +51,71 @@
         }
 
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            font-size: 16px;
+            font-family: var(--font-family);
+            background-color: var(--background);
+            color: var(--black);
             line-height: 1.6;
-            color: var(--text-light);
-            background-color: var(--bg-dark);
+            font-size: 16px;
             overflow-x: hidden;
         }
 
-        /* Skip Link */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--accent);
-            color: var(--text-light);
-            padding: 8px 16px;
-            z-index: 100;
-            transition: top 0.3s;
-        }
-
-        .skip-link:focus {
-            top: 0;
-        }
-
-        /* Typography */
-        h1 {
-            font-size: clamp(40px, 8vw, 72px);
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-
-        h2 {
-            font-size: clamp(32px, 5vw, 48px);
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: -0.01em;
-        }
-
-        h3 {
-            font-size: clamp(20px, 3vw, 28px);
-            font-weight: 600;
-            line-height: 1.3;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: var(--text-muted);
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
         a {
-            color: inherit;
             text-decoration: none;
+            color: inherit;
         }
 
-        /* Container */
+        /* ==================== TYPOGRAPHY ==================== */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--black);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+        }
+
+        p {
+            color: var(--grey);
+        }
+
+        .highlight {
+            font-style: italic;
+            font-weight: 700;
+            color: var(--light-blue);
+        }
+
+        /* ==================== LAYOUT ==================== */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 32px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
+        section {
+            padding: 80px 0;
         }
 
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: var(--text-light);
-            box-shadow: var(--glow-accent);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 60px rgba(97, 152, 255, 0.5);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-light);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--accent);
-        }
-
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 20px 0;
-            transition: all 0.3s ease;
-        }
-
-        .header.scrolled {
-            background: rgba(0, 4, 27, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 16px 0;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .header .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-weight: 500;
-            color: var(--text-muted);
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--text-light);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-light);
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 0 80px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 50%, rgba(32, 1, 145, 0.3) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 50%, rgba(97, 152, 255, 0.2) 0%, transparent 50%);
-            animation: heroGlow 10s ease-in-out infinite alternate;
-        }
-
-        @keyframes heroGlow {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-5%, 5%); }
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            margin-bottom: 24px;
-        }
-
-        .hero h1 span {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 20px;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .apy-counter {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--bg-card);
-            padding: 16px 32px;
-            border-radius: 100px;
-            margin-bottom: 40px;
-            border: 1px solid rgba(97, 152, 255, 0.3);
-            animation: apyPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes apyPulse {
-            0%, 100% { box-shadow: 0 0 20px rgba(97, 152, 255, 0.2); }
-            50% { box-shadow: 0 0 40px rgba(97, 152, 255, 0.4); }
-        }
-
-        .apy-counter .label {
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        .apy-counter .value {
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--accent);
-        }
-
-        .waitlist-widget {
-            margin: 40px auto;
-            max-width: 500px;
-        }
-
-        .hero-mockup {
-            margin-top: 60px;
-            position: relative;
-        }
-
-        .mockup-placeholder {
-            width: 100%;
-            max-width: 800px;
-            height: 400px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            border-radius: 24px;
-            border: 1px solid rgba(97, 152, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 18px;
-            box-shadow: var(--glow-accent);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mockup-placeholder::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .mockup-placeholder::after {
-            content: '';
-            position: absolute;
-            top: 16px;
-            left: 20px;
-            width: 60px;
-            height: 12px;
-            background: linear-gradient(90deg,
-                rgba(255, 255, 255, 0.3) 0%,
-                rgba(255, 255, 255, 0.3) 20px,
-                transparent 20px,
-                transparent 24px,
-                rgba(255, 255, 255, 0.3) 24px,
-                rgba(255, 255, 255, 0.3) 44px,
-                transparent 44px,
-                transparent 48px,
-                rgba(255, 255, 255, 0.3) 48px);
-            border-radius: 6px;
-        }
-
-        /* Social Proof */
-        .social-proof {
-            background: var(--bg-card);
-            padding: 60px 0;
-            overflow: hidden;
-        }
-
-        .social-proof-title {
-            text-align: center;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-        }
-
-        .marquee {
-            display: flex;
-            overflow: hidden;
-            user-select: none;
-        }
-
-        .marquee-content {
-            display: flex;
-            align-items: center;
-            gap: 80px;
-            animation: marquee 60s linear infinite;
-        }
-
-        .marquee-content:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .logo-placeholder {
-            width: 120px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 12px;
-            flex-shrink: 0;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 120px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 80px;
-        }
-
-        .section-header p {
-            margin-top: 20px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-        }
-
-        .feature-card {
-            background: var(--bg-card);
-            border-radius: 24px;
-            padding: 40px;
-            border: 1px solid rgba(97, 152, 255, 0.1);
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .feature-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-4px) scale(1.02);
-            border-color: rgba(97, 152, 255, 0.3);
-            box-shadow: var(--glow-accent);
-        }
-
-        .feature-icon {
-            width: 64px;
-            height: 64px;
-            background: var(--gradient-primary);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-        }
-
-        .feature-icon svg {
-            width: 32px;
-            height: 32px;
-            fill: none;
-            stroke: var(--text-light);
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .feature-card h3 {
-            margin-bottom: 12px;
-        }
-
-        .feature-card p {
-            font-size: 16px;
-        }
-
-        /* How It Works */
-        .how-it-works {
-            padding: 120px 0;
-            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 50%, var(--bg-dark) 100%);
-        }
-
-        .steps {
-            display: flex;
-            flex-direction: column;
-            gap: 100px;
-            position: relative;
-        }
-
-        .steps::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 100px;
-            bottom: 100px;
-            width: 2px;
-            background: linear-gradient(180deg, var(--accent) 0%, var(--primary) 100%);
-            transform: translateX(-50%);
-        }
-
-        .step {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .step.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .step:nth-child(even) {
-            direction: rtl;
-        }
-
-        .step:nth-child(even) > * {
-            direction: ltr;
-        }
-
-        .step-content {
-            position: relative;
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 24px;
-            box-shadow: var(--glow-accent);
-        }
-
-        .step-content h3 {
-            margin-bottom: 16px;
-        }
-
-        .step-mockup {
-            background: var(--bg-card);
-            border-radius: 20px;
-            height: 300px;
-            border: 1px solid rgba(97, 152, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        /* Statistics */
-        .statistics {
-            padding: 120px 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 40px 20px;
-            background: var(--bg-card);
-            border-radius: 20px;
-            border: 1px solid rgba(97, 152, 255, 0.1);
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .stat-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .stat-value {
-            font-size: 48px;
-            font-weight: 800;
-            color: var(--accent);
-            margin-bottom: 8px;
-        }
-
-        .stat-label {
-            font-size: 14px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 120px 0;
-            background: var(--bg-card);
-        }
-
-        .testimonials-wrapper {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .testimonial-carousel {
-            overflow: hidden;
-        }
-
-        .testimonial-track {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .testimonial-slide {
-            min-width: 100%;
-            padding: 0 20px;
-        }
-
-        .testimonial-card {
-            text-align: center;
-            padding: 40px;
-        }
-
-        .quote-icon {
-            font-size: 80px;
-            color: var(--accent);
-            opacity: 0.3;
-            line-height: 1;
-            margin-bottom: 20px;
-        }
-
-        .testimonial-text {
-            font-size: 24px;
-            font-style: italic;
-            color: var(--text-light);
-            margin-bottom: 32px;
-            line-height: 1.6;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-        }
-
-        .author-avatar {
-            width: 56px;
-            height: 56px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .author-info {
-            text-align: left;
-        }
-
-        .author-name {
-            font-weight: 600;
-            font-size: 18px;
-        }
-
-        .author-role {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        .testimonial-dots {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 40px;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .dot.active {
-            background: var(--accent);
-            transform: scale(1.2);
-        }
-
-        /* FAQ */
-        .faq {
-            padding: 120px 0;
-        }
-
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        .faq-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .faq-question {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 24px 0;
-            background: none;
-            border: none;
-            color: var(--text-light);
-            font-size: 18px;
-            font-weight: 600;
-            text-align: left;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .faq-question:hover {
-            color: var(--accent);
-        }
-
-        .faq-icon {
-            font-size: 24px;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 200px;
-            padding-bottom: 24px;
-        }
-
-        .faq-answer p {
-            font-size: 16px;
-        }
-
-        /* Final CTA */
-        .final-cta {
-            padding: 120px 0;
-            background: var(--gradient-primary);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .final-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-
-        .final-cta .container {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-
-        .final-cta h2 {
-            margin-bottom: 20px;
-        }
-
-        .final-cta p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 40px;
-        }
-
-        .app-badges {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-top: 40px;
-        }
-
-        .app-badge {
-            width: 150px;
-            height: 50px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .app-badge:hover {
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        /* Footer */
-        .footer {
-            padding: 80px 0 40px;
-            background: var(--bg-dark);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr repeat(3, 1fr);
-            gap: 60px;
-            margin-bottom: 60px;
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        .footer-brand p {
-            font-size: 14px;
-            max-width: 280px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 16px;
-            margin-top: 24px;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: var(--bg-card);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: var(--accent);
-            transform: translateY(-2px);
-        }
-
-        .social-link svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--text-light);
-        }
-
-        .footer-column h4 {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 24px;
-            color: var(--text-light);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            font-size: 14px;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-
-        .footer-bottom {
-            padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-bottom p {
-            font-size: 14px;
-        }
-
-        .footer-legal {
-            display: flex;
-            gap: 24px;
-        }
-
-        .footer-legal a {
-            color: var(--text-muted);
-            font-size: 14px;
-            transition: color 0.3s ease;
-        }
-
-        .footer-legal a:hover {
-            color: var(--text-light);
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .features-grid {
-                gap: 24px;
-            }
-
-            .steps::before {
-                display: none;
-            }
-
-            .step {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .step:nth-child(even) {
-                direction: ltr;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
+        @media (min-width: 768px) {
+            section {
+                padding: 120px 0;
             }
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .nav .btn {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stat-value {
-                font-size: 36px;
-            }
-
-            .testimonial-text {
-                font-size: 18px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-
-            .mockup-placeholder {
-                height: 250px;
-            }
-
-            .apy-counter {
-                padding: 12px 24px;
-            }
-
-            .apy-counter .value {
-                font-size: 24px;
-            }
-        }
-
-        /* Animations */
+        /* ==================== ANIMATIONS ==================== */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -1023,433 +127,1095 @@
             transform: translateY(0);
         }
 
-        /* GetWaitlist Widget Customization */
+        /* Curve Animation */
+        @keyframes drawCurve {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .curve-animated {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+        }
+
+        .curve-animated.animate {
+            animation: drawCurve 2s ease forwards;
+        }
+
+        /* ==================== HEADER ==================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(245, 246, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 16px 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        @media (min-width: 768px) {
+            .logo img {
+                height: 40px;
+            }
+        }
+
+        nav {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                display: flex;
+                align-items: center;
+                gap: 40px;
+            }
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--grey);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #150066;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(32, 1, 145, 0.3);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--black);
+            transition: var(--transition);
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-toggle {
+                display: none;
+            }
+        }
+
+        .header-cta {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .header-cta {
+                display: inline-flex;
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 12px 0;
+            font-weight: 500;
+            color: var(--grey);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .mobile-menu .btn {
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        /* ==================== HERO ==================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg-curve {
+            position: absolute;
+            right: -200px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 800px;
+            height: 600px;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        @media (min-width: 768px) {
+            .hero-bg-curve {
+                right: -100px;
+                opacity: 0.2;
+            }
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            margin-bottom: 24px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            max-width: 600px;
+            margin: 0 auto 48px;
+            color: var(--grey);
+        }
+
+        /* Waitlist Container Styling */
+        .waitlist-wrapper {
+            margin: 40px auto;
+            max-width: 500px;
+        }
+
+        /* Tier Box */
+        .tier-box {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 32px;
+            margin-top: 48px;
+            box-shadow: var(--shadow);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tier-box h3 {
+            text-align: center;
+            margin-bottom: 24px;
+            color: var(--black);
+        }
+
+        .tier-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .tier-item:last-child {
+            border-bottom: none;
+        }
+
+        .tier-emoji {
+            font-size: 1.5rem;
+        }
+
+        .tier-info {
+            flex: 1;
+        }
+
+        .tier-info strong {
+            display: block;
+            color: var(--black);
+        }
+
+        .tier-info span {
+            font-size: 0.9rem;
+            color: var(--grey);
+        }
+
+        .tier-boost {
+            font-weight: 700;
+            color: var(--light-blue);
+        }
+
+        /* ==================== NUMBERS/GRAPH SECTION ==================== */
+        .numbers-section {
+            text-align: center;
+        }
+
+        .numbers-section h2 {
+            margin-bottom: 16px;
+        }
+
+        .numbers-subtitle {
+            font-size: 1.25rem;
+            color: var(--grey);
+            margin-bottom: 48px;
+        }
+
+        .graph-container {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px 20px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .graph-container {
+                padding: 40px;
+            }
+        }
+
+        .graph-svg {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+        }
+
+        .graph-legend {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        @media (min-width: 768px) {
+            .graph-legend {
+                gap: 40px;
+            }
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .legend-line {
+            width: 40px;
+            height: 3px;
+            border-radius: 2px;
+        }
+
+        .legend-line.bank {
+            background: var(--grey);
+        }
+
+        .legend-line.unflat {
+            background: var(--light-blue);
+        }
+
+        /* ==================== HOW IT WORKS ==================== */
+        .how-it-works {
+            text-align: center;
+        }
+
+        .how-it-works h2 {
+            margin-bottom: 64px;
+        }
+
+        .steps-grid {
+            display: grid;
+            gap: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .steps-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+            }
+        }
+
+        .step-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px 32px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .step-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--light-blue);
+            opacity: 0.3;
+            margin-bottom: 16px;
+        }
+
+        .step-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 24px;
+        }
+
+        .step-card h3 {
+            margin-bottom: 12px;
+            color: var(--black);
+        }
+
+        .step-card p {
+            font-size: 0.95rem;
+        }
+
+        /* ==================== WHAT IS UNFLAT ==================== */
+        .what-is {
+            text-align: center;
+        }
+
+        .what-is h2 {
+            margin-bottom: 32px;
+        }
+
+        .what-is-content {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        /* ==================== TRUST SECTION ==================== */
+        .trust-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--black) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(97, 152, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .trust-section h2 {
+            margin-bottom: 24px;
+            position: relative;
+            color: var(--white);
+        }
+
+        .trust-section p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ==================== WHY UNFLAT ==================== */
+        .why-unflat {
+            text-align: center;
+        }
+
+        .why-unflat h2 {
+            margin-bottom: 64px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .benefit-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 32px;
+            text-align: left;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 8px;
+            color: var(--black);
+        }
+
+        .benefit-card p {
+            font-size: 0.95rem;
+        }
+
+        /* Center last row on large screens */
+        @media (min-width: 1024px) {
+            .benefits-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .benefit-card:nth-child(4) {
+                grid-column: 1 / 2;
+                margin-left: auto;
+                margin-right: 0;
+                max-width: calc(100% - 12px);
+            }
+
+            .benefit-card:nth-child(5) {
+                grid-column: 3 / 4;
+                margin-left: 0;
+                margin-right: auto;
+                max-width: calc(100% - 12px);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .benefits-grid-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .benefits-row {
+                display: flex;
+                justify-content: center;
+                gap: 24px;
+            }
+
+            .benefits-row .benefit-card {
+                flex: 0 0 calc(33.333% - 16px);
+                max-width: calc(33.333% - 16px);
+            }
+
+            .benefits-row-bottom {
+                justify-content: center;
+            }
+
+            .benefits-row-bottom .benefit-card {
+                flex: 0 0 calc(33.333% - 16px);
+                max-width: calc(33.333% - 16px);
+            }
+        }
+
+        /* ==================== FAQ ==================== */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--border-radius-sm);
+            margin-bottom: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px;
+            background: none;
+            border: none;
+            text-align: left;
+            font-family: inherit;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--black);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            color: var(--primary-blue);
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 24px 24px;
+            color: var(--grey);
+            line-height: 1.7;
+        }
+
+        /* ==================== FINAL CTA ==================== */
+        .final-cta {
+            text-align: center;
+            background: var(--white);
+        }
+
+        .final-cta h2 {
+            margin-bottom: 40px;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: var(--background);
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            margin-bottom: 16px;
+        }
+
+        .footer-logo img {
+            height: 36px;
+        }
+
+        .footer-motto {
+            color: var(--grey);
+            font-size: 1rem;
+            margin-bottom: 32px;
+            font-style: italic;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .footer-links a {
+            color: var(--grey);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .footer-copyright {
+            color: var(--grey);
+            font-size: 0.85rem;
+        }
+
+        /* ==================== WAITLIST WIDGET OVERRIDES ==================== */
         #getWaitlistContainer {
-            --gtw-primary-100: var(--accent);
-            --gtw-primary-200: var(--primary);
+            font-family: var(--font-family) !important;
+        }
+
+        #getWaitlistContainer input {
+            border-radius: var(--border-radius-sm) !important;
+            border: 2px solid rgba(32, 1, 145, 0.1) !important;
+            padding: 14px 16px !important;
+            font-size: 1rem !important;
+            transition: var(--transition) !important;
+        }
+
+        #getWaitlistContainer input:focus {
+            border-color: var(--light-blue) !important;
+            outline: none !important;
+            box-shadow: 0 0 0 4px rgba(97, 152, 255, 0.1) !important;
+        }
+
+        #getWaitlistContainer button {
+            background: var(--primary-blue) !important;
+            border-radius: var(--border-radius-sm) !important;
+            padding: 14px 28px !important;
+            font-weight: 600 !important;
+            font-size: 1rem !important;
+            transition: var(--transition) !important;
+        }
+
+        #getWaitlistContainer button:hover {
+            background: #150066 !important;
+            transform: translateY(-2px) !important;
         }
     </style>
 </head>
 <body>
-    <!-- Skip Link -->
-    <a href="#main" class="skip-link">Skip to main content</a>
-
     <!-- Header -->
-    <header class="header" id="header">
+    <header id="header">
         <div class="container">
-            <a href="#" class="logo">Unflat</a>
-            <nav class="nav">
-                <ul class="nav-links">
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-                <a href="#hero-waitlist" class="btn btn-primary">Join Waitlist</a>
-            </nav>
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
+            <div class="header-inner">
+                <a href="#" class="logo">
+                    <img src="assets/logo_full.png" alt="Unflat">
+                </a>
+
+                <nav>
+                    <a href="#how-it-works">How it works</a>
+                    <a href="#faq">FAQ</a>
+                </nav>
+
+                <a href="#hero-waitlist" class="btn btn-primary header-cta">Join Waitlist</a>
+
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <main id="main">
-        <!-- Hero Section -->
-        <section class="hero" id="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="apy-counter">
-                        <span class="label">Current APY</span>
-                        <span class="value">8.5%</span>
-                    </div>
-                    <h1>DeFi Yields, <span>Simplified</span></h1>
-                    <p class="hero-subtitle">The easiest way to earn yield on your crypto. No complexity, no stress.</p>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#how-it-works">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="#hero-waitlist" class="btn btn-primary">Join Waitlist</a>
+    </div>
 
-                    <div class="waitlist-widget" id="hero-waitlist">
-                        <div id="getWaitlistContainer" data-waitlist_id="32433" data-widget_type="WIDGET_3"></div>
-                    </div>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Background Curve SVG -->
+        <svg class="hero-bg-curve" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="curve-animated" d="M0,550 Q100,540 200,500 Q350,420 450,300 Q550,180 650,80 Q700,30 800,0"
+                  stroke="#6198FF" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M650,80 Q700,30 800,0"
+                  stroke="#6198FF" stroke-width="4" fill="none" stroke-dasharray="12,8" stroke-linecap="round" opacity="0.6"/>
+        </svg>
 
-                <div class="hero-mockup fade-in">
-                    <div class="mockup-placeholder">
-                        <span>Dashboard Preview</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Social Proof -->
-        <section class="social-proof">
-            <div class="container">
-                <p class="social-proof-title">Trusted by leading protocols</p>
-            </div>
-            <div class="marquee">
-                <div class="marquee-content">
-                    <div class="logo-placeholder">Partner 1</div>
-                    <div class="logo-placeholder">Partner 2</div>
-                    <div class="logo-placeholder">Partner 3</div>
-                    <div class="logo-placeholder">Partner 4</div>
-                    <div class="logo-placeholder">Partner 5</div>
-                    <div class="logo-placeholder">Partner 6</div>
-                    <div class="logo-placeholder">Partner 7</div>
-                    <div class="logo-placeholder">Partner 8</div>
-                    <!-- Duplicate for seamless loop -->
-                    <div class="logo-placeholder">Partner 1</div>
-                    <div class="logo-placeholder">Partner 2</div>
-                    <div class="logo-placeholder">Partner 3</div>
-                    <div class="logo-placeholder">Partner 4</div>
-                    <div class="logo-placeholder">Partner 5</div>
-                    <div class="logo-placeholder">Partner 6</div>
-                    <div class="logo-placeholder">Partner 7</div>
-                    <div class="logo-placeholder">Partner 8</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="features" id="features">
-            <div class="container">
-                <div class="section-header fade-in">
-                    <h2>Why Choose Unflat?</h2>
-                    <p>We've taken the complexity out of DeFi, so you can focus on what matters: growing your wealth.</p>
-                </div>
-
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            </svg>
-                        </div>
-                        <h3>Bank-Grade Security</h3>
-                        <p>Your assets are protected by industry-leading security protocols and multi-sig wallets.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <rect x="2" y="4" width="20" height="16" rx="2"/>
-                                <path d="M12 12h.01"/>
-                                <path d="M17 12h.01"/>
-                                <path d="M7 12h.01"/>
-                            </svg>
-                        </div>
-                        <h3>No Wallet Needed</h3>
-                        <p>Start earning without the hassle of managing complex crypto wallets or seed phrases.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-                            </svg>
-                        </div>
-                        <h3>Real-Time Earnings</h3>
-                        <p>Watch your yields grow in real-time with our intuitive dashboard and instant notifications.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12 6 12 12 16 14"/>
-                            </svg>
-                        </div>
-                        <h3>Set & Forget</h3>
-                        <p>Automated yield optimization means your money works for you 24/7 without any manual intervention.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How It Works -->
-        <section class="how-it-works" id="how-it-works">
-            <div class="container">
-                <div class="section-header fade-in">
-                    <h2>How It Works</h2>
-                    <p>Get started in three simple steps and start earning yields today.</p>
-                </div>
-
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-content">
-                            <div class="step-number">1</div>
-                            <h3>Create Your Account</h3>
-                            <p>Sign up in minutes with just your email. No crypto experience required. We guide you through every step of the process.</p>
-                        </div>
-                        <div class="step-mockup">Signup Flow Mockup</div>
-                    </div>
-
-                    <div class="step">
-                        <div class="step-content">
-                            <div class="step-number">2</div>
-                            <h3>Deposit Your Funds</h3>
-                            <p>Connect your bank or transfer crypto. We support multiple currencies and payment methods for your convenience.</p>
-                        </div>
-                        <div class="step-mockup">Deposit Dashboard Mockup</div>
-                    </div>
-
-                    <div class="step">
-                        <div class="step-content">
-                            <div class="step-number">3</div>
-                            <h3>Earn Passive Yield</h3>
-                            <p>Sit back and watch your earnings grow. Our algorithms optimize your returns across the best DeFi protocols.</p>
-                        </div>
-                        <div class="step-mockup">Earnings Dashboard Mockup</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Statistics -->
-        <section class="statistics" id="statistics">
-            <div class="container">
-                <div class="section-header fade-in">
-                    <h2>Trusted by Thousands</h2>
-                    <p>Join a growing community of smart investors who trust Unflat with their crypto.</p>
-                </div>
-
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-value" data-target="50">$0</div>
-                        <div class="stat-label">Total Value Locked (M)</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value" data-target="12500">0</div>
-                        <div class="stat-label">Active Users</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value" data-target="8.5">0</div>
-                        <div class="stat-label">Average APY (%)</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value" data-target="100000">0</div>
-                        <div class="stat-label">Transactions</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials -->
-        <section class="testimonials" id="testimonials">
-            <div class="container">
-                <div class="section-header fade-in">
-                    <h2>What Our Users Say</h2>
-                    <p>Don't just take our word for it. Here's what early adopters have to say.</p>
-                </div>
-
-                <div class="testimonials-wrapper">
-                    <div class="testimonial-carousel">
-                        <div class="testimonial-track">
-                            <div class="testimonial-slide">
-                                <div class="testimonial-card">
-                                    <div class="quote-icon">"</div>
-                                    <p class="testimonial-text">Unflat made DeFi accessible for me. I was intimidated by crypto, but now I'm earning passive income effortlessly.</p>
-                                    <div class="testimonial-author">
-                                        <div class="author-avatar">SK</div>
-                                        <div class="author-info">
-                                            <div class="author-name">Sarah K.</div>
-                                            <div class="author-role">Marketing Manager</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-slide">
-                                <div class="testimonial-card">
-                                    <div class="quote-icon">"</div>
-                                    <p class="testimonial-text">The security and transparency are what sold me. I can see exactly where my money is and how it's growing.</p>
-                                    <div class="testimonial-author">
-                                        <div class="author-avatar">MR</div>
-                                        <div class="author-info">
-                                            <div class="author-name">Michael R.</div>
-                                            <div class="author-role">Software Engineer</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-slide">
-                                <div class="testimonial-card">
-                                    <div class="quote-icon">"</div>
-                                    <p class="testimonial-text">Finally, a DeFi platform that doesn't require a PhD to understand. Simple, elegant, and profitable.</p>
-                                    <div class="testimonial-author">
-                                        <div class="author-avatar">AL</div>
-                                        <div class="author-info">
-                                            <div class="author-name">Amanda L.</div>
-                                            <div class="author-role">Financial Advisor</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-dots">
-                        <button class="dot active" data-index="0" aria-label="Testimonial 1"></button>
-                        <button class="dot" data-index="1" aria-label="Testimonial 2"></button>
-                        <button class="dot" data-index="2" aria-label="Testimonial 3"></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section class="faq" id="faq">
-            <div class="container">
-                <div class="section-header fade-in">
-                    <h2>Frequently Asked Questions</h2>
-                    <p>Got questions? We've got answers.</p>
-                </div>
-
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>What is Unflat and how does it work?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Unflat is a DeFi yield platform that simplifies earning passive income on your crypto. We automatically allocate your funds across vetted DeFi protocols to optimize your returns while managing risk.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>Is my money safe with Unflat?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Security is our top priority. We use bank-grade encryption, multi-signature wallets, and regular security audits by leading firms. Your funds are never stored in a single point of failure.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>What are the fees?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>We charge a small performance fee only on the yields we generate for you. There are no hidden fees, no deposit fees, and no withdrawal fees. You only pay when you earn.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>How much can I earn?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Returns vary based on market conditions, but our users typically earn between 5-12% APY. Our algorithms continuously optimize for the best risk-adjusted returns available in the market.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>Can I withdraw my funds anytime?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Yes, your funds are never locked. You can withdraw anytime with no penalties. Most withdrawals are processed within 24 hours, and often much faster.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>Do I need crypto experience to use Unflat?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Not at all. Unflat is designed for everyone, from crypto beginners to experienced investors. Our intuitive interface guides you through every step, and our support team is always here to help.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA -->
-        <section class="final-cta" id="cta">
-            <div class="container">
-                <h2>Ready to Start Earning?</h2>
-                <p>Join thousands of smart investors who are already growing their wealth with Unflat.</p>
-
-                <div class="waitlist-widget">
-                    <div id="getWaitlistContainer2" data-waitlist_id="32433" data-widget_type="WIDGET_3"></div>
-                </div>
-
-                <div class="app-badges">
-                    <a href="#" class="app-badge">App Store - Coming Soon</a>
-                    <a href="#" class="app-badge">Google Play - Coming Soon</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="#" class="logo">Unflat</a>
-                    <p>The easiest way to earn yield on your crypto. No complexity, no stress.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Discord">
-                            <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Telegram">
-                            <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-                        </a>
+            <div class="hero-content fade-in">
+                <h1>Earn 4-7% on your savings.<br><span class="highlight">Verify</span> every cent.</h1>
+                <p class="hero-subtitle">Savings powered by DeFi. No crypto knowledge needed. You <span class="highlight">relax</span>, your money works.</p>
+
+                <div class="waitlist-wrapper" id="hero-waitlist">
+                    <div id="getWaitlistContainer" data-waitlist_id="32433" data-widget_type="WIDGET_3"></div>
+                </div>
+
+                <div class="tier-box fade-in">
+                    <h3>The earlier you join, the more you earn.</h3>
+                    <div class="tier-item">
+                        <span class="tier-emoji">🥇</span>
+                        <div class="tier-info">
+                            <strong>First 500</strong>
+                            <span>Early believers</span>
+                        </div>
+                        <span class="tier-boost">+2% APY boost</span>
                     </div>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Product</h4>
-                    <ul class="footer-links">
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Roadmap</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Company</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Press</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Disclaimer</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 Unflat. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
+                    <div class="tier-item">
+                        <span class="tier-emoji">🥈</span>
+                        <div class="tier-info">
+                            <strong>Next 1,500</strong>
+                            <span>Early adopters</span>
+                        </div>
+                        <span class="tier-boost">+1.5% boost</span>
+                    </div>
+                    <div class="tier-item">
+                        <span class="tier-emoji">🥉</span>
+                        <div class="tier-info">
+                            <strong>Next 3,000</strong>
+                            <span>Early supporters</span>
+                        </div>
+                        <span class="tier-boost">+1% boost</span>
+                    </div>
+                    <div class="tier-item">
+                        <span class="tier-emoji">🎁</span>
+                        <div class="tier-info">
+                            <strong>Invite friends</strong>
+                            <span>Share the savings</span>
+                        </div>
+                        <span class="tier-boost">+0.5% each</span>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Numbers/Graph Section -->
+    <section class="numbers-section">
+        <div class="container">
+            <div class="fade-in">
+                <h2>4-7% APY vs 0.5% at your bank.</h2>
+                <p class="numbers-subtitle">Set it, forget it, watch it <span class="highlight">grow</span>.</p>
+            </div>
+
+            <div class="graph-container fade-in" id="graph-container">
+                <svg class="graph-svg" viewBox="0 0 700 280" preserveAspectRatio="xMidYMid meet">
+                    <!-- Grid lines -->
+                    <line x1="50" y1="240" x2="650" y2="240" stroke="#E0E0E0" stroke-width="1"/>
+                    <line x1="50" y1="180" x2="650" y2="180" stroke="#E0E0E0" stroke-width="1" stroke-dasharray="4"/>
+                    <line x1="50" y1="120" x2="650" y2="120" stroke="#E0E0E0" stroke-width="1" stroke-dasharray="4"/>
+                    <line x1="50" y1="60" x2="650" y2="60" stroke="#E0E0E0" stroke-width="1" stroke-dasharray="4"/>
+
+                    <!-- Y-axis labels -->
+                    <text x="40" y="244" text-anchor="end" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">$10k</text>
+                    <text x="40" y="184" text-anchor="end" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">$11k</text>
+                    <text x="40" y="124" text-anchor="end" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">$12k</text>
+                    <text x="40" y="64" text-anchor="end" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">$14k+</text>
+
+                    <!-- X-axis labels -->
+                    <text x="50" y="260" text-anchor="middle" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">Year 0</text>
+                    <text x="200" y="260" text-anchor="middle" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">Year 2</text>
+                    <text x="350" y="260" text-anchor="middle" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">Year 4</text>
+                    <text x="500" y="260" text-anchor="middle" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">Year 6</text>
+                    <text x="650" y="260" text-anchor="middle" fill="#484848" font-size="12" font-family="Inter, system-ui, sans-serif">Year 8</text>
+
+                    <!-- Bank line (0.5% APY - almost flat) -->
+                    <path id="bankLine" d="M50,240 L200,235 L350,230 L500,225 L650,220"
+                          stroke="#484848" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+                    <!-- Unflat curve (5.5% APY average - exponential growth) -->
+                    <path id="unflatCurve" class="curve-animated" d="M50,240 Q150,230 250,200 Q350,150 450,90 Q550,40 650,20"
+                          stroke="#6198FF" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+                    <!-- Projected portion (dashed) -->
+                    <path d="M500,60 Q575,35 650,20"
+                          stroke="#6198FF" stroke-width="4" fill="none" stroke-dasharray="10,6" stroke-linecap="round"/>
+
+                    <!-- Data points -->
+                    <circle cx="650" cy="220" r="6" fill="#484848"/>
+                    <circle cx="650" cy="20" r="8" fill="#6198FF"/>
+
+                    <!-- Labels -->
+                    <text x="658" y="215" fill="#484848" font-size="13" font-weight="600" font-family="Inter, system-ui, sans-serif">$10.4k</text>
+                    <text x="658" y="40" fill="#6198FF" font-size="14" font-weight="700" font-family="Inter, system-ui, sans-serif">$15.5k+</text>
+                </svg>
+
+                <div class="graph-legend">
+                    <div class="legend-item">
+                        <span class="legend-line bank"></span>
+                        <span>Traditional Bank (0.5% APY)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-line unflat"></span>
+                        <span>Unflat (4-7% APY)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="fade-in">How it works</h2>
+
+            <div class="steps-grid">
+                <div class="step-card fade-in">
+                    <div class="step-number">01</div>
+                    <svg class="step-icon" viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="28" stroke="#6198FF" stroke-width="2" fill="none"/>
+                        <path d="M32 18v28M22 32h20" stroke="#6198FF" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <h3>Deposit</h3>
+                    <p>Connect your bank or send crypto. No minimum.</p>
+                </div>
+
+                <div class="step-card fade-in">
+                    <div class="step-number">02</div>
+                    <svg class="step-icon" viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="28" stroke="#6198FF" stroke-width="2" fill="none"/>
+                        <path d="M20 38 Q32 20 44 38" stroke="#6198FF" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <circle cx="32" cy="28" r="4" fill="#6198FF"/>
+                    </svg>
+                    <h3>Earn & <span class="highlight">Relax</span></h3>
+                    <p>Your money works 24/7. You don't have to.</p>
+                </div>
+
+                <div class="step-card fade-in">
+                    <div class="step-number">03</div>
+                    <svg class="step-icon" viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="28" stroke="#6198FF" stroke-width="2" fill="none"/>
+                        <path d="M24 32h16M36 24l8 8-8 8" stroke="#6198FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h3>Withdraw</h3>
+                    <p>Take it out anytime. No fees, no lockups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Unflat -->
+    <section class="what-is">
+        <div class="container">
+            <div class="fade-in">
+                <h2>What is Unflat?</h2>
+                <p class="what-is-content">
+                    A savings app that earns you 4-7% APY using DeFi lending protocols. Your money stays yours — we never hold it. You <span class="highlight">relax</span> while your savings grow. Everything is transparent and verifiable on the blockchain.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="fade-in">
+                <h2>Please don't trust us.<br><span class="highlight">Verify</span> what we're telling you.</h2>
+                <p>Every transaction is on-chain. Check it yourself, anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Unflat -->
+    <section class="why-unflat">
+        <div class="container">
+            <h2 class="fade-in">Why Unflat?</h2>
+
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Higher returns</h3>
+                    <p>4-7% APY vs 0.5% at traditional banks</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">😌</div>
+                    <h3>Zero effort</h3>
+                    <p>You <span class="highlight">relax</span>, your money works 24/7</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🔍</div>
+                    <h3>Full transparency</h3>
+                    <p>Every transaction visible on-chain</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🔐</div>
+                    <h3>You stay in control</h3>
+                    <p>Non-custodial — your money, your wallet</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">✨</div>
+                    <h3>No crypto skills needed</h3>
+                    <p>We handle the complexity, you see the results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <div class="faq-section">
+                <h2 class="fade-in">FAQ</h2>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        Do I need to know crypto?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            No. Unflat handles everything. You just deposit, <span class="highlight">relax</span>, and withdraw when you want.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        Is this a bank?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            No. Unflat connects you to DeFi lending protocols. Different product, different risk profile — that's why we prioritize transparency.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        How much can I earn?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Currently 4-7% APY, depending on market conditions. Way more than your bank's 0.5%.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        Is my money locked?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            No. Withdraw anytime, no fees.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        How can I verify?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Every transaction is recorded on the blockchain. You can check your funds anytime using your wallet address.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        Do I need to do anything after depositing?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            No. That's the point. You <span class="highlight">relax</span>, your money works for you automatically.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="fade-in">
+                <h2>The earlier you join, the more you earn.</h2>
+                <div class="waitlist-wrapper">
+                    <div id="getWaitlistContainer" data-waitlist_id="32433" data-widget_type="WIDGET_3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="assets/logo_full.png" alt="Unflat">
+            </div>
+            <p class="footer-motto">Patience pays. Transparency proves it.</p>
+            <div class="footer-links">
+                <a href="#how-it-works">How it works</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+                <a href="#">Cookies</a>
+                <a href="#">Risk</a>
+            </div>
+            <p class="footer-copyright">&copy; 2025 Unflat</p>
+        </div>
     </footer>
 
-    <!-- GetWaitlist Script -->
+    <!-- Waitlist Widget Script -->
     <script src="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.js"></script>
 
     <script>
-        // Header scroll effect
+        // ==================== HEADER SCROLL EFFECT ====================
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -1459,166 +1225,108 @@
             }
         });
 
-        // Smooth scroll for anchor links
+        // ==================== MOBILE MENU ====================
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // ==================== SMOOTH SCROLL ====================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
         });
 
-        // Intersection Observer for fade-in animations
+        // ==================== FADE IN ANIMATION ====================
         const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-
-                    // Trigger counter animation for stat items
-                    if (entry.target.classList.contains('stat-item')) {
-                        animateCounter(entry.target.querySelector('.stat-value'));
-                    }
                 }
             });
         }, observerOptions);
 
-        // Observe elements
-        document.querySelectorAll('.fade-in, .feature-card, .step, .stat-item, .faq-item').forEach(el => {
+        document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
 
-        // Counter animation
-        function animateCounter(element) {
-            const target = parseFloat(element.dataset.target);
-            const duration = 2000;
-            const start = performance.now();
-            const isDecimal = target % 1 !== 0;
-            const isLarge = target > 1000;
-
-            function update(currentTime) {
-                const elapsed = currentTime - start;
-                const progress = Math.min(elapsed / duration, 1);
-
-                // Easing function
-                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-                const current = target * easeOutQuart;
-
-                if (isLarge) {
-                    element.textContent = Math.floor(current).toLocaleString();
-                } else if (isDecimal) {
-                    element.textContent = current.toFixed(1) + '%';
-                } else {
-                    element.textContent = '$' + Math.floor(current) + 'M';
-                }
-
-                if (progress < 1) {
-                    requestAnimationFrame(update);
-                } else {
-                    // Final value
-                    if (isLarge) {
-                        element.textContent = target.toLocaleString();
-                    } else if (isDecimal) {
-                        element.textContent = target.toFixed(1) + '%';
-                    } else {
-                        element.textContent = '$' + target + 'M';
-                    }
-                }
-            }
-
-            requestAnimationFrame(update);
-        }
-
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const item = button.parentElement;
+        // ==================== FAQ ACCORDION ====================
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const answer = item.querySelector('.faq-answer');
                 const isActive = item.classList.contains('active');
 
                 // Close all other items
                 document.querySelectorAll('.faq-item').forEach(otherItem => {
-                    otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                    }
                 });
 
                 // Toggle current item
-                if (!isActive) {
+                if (isActive) {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = null;
+                } else {
                     item.classList.add('active');
-                    button.setAttribute('aria-expanded', 'true');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
                 }
             });
         });
 
-        // Testimonial Carousel
-        const track = document.querySelector('.testimonial-track');
-        const dots = document.querySelectorAll('.dot');
-        let currentSlide = 0;
-        const totalSlides = dots.length;
-        let autoplayInterval;
-
-        function goToSlide(index) {
-            currentSlide = index;
-            track.style.transform = `translateX(-${index * 100}%)`;
-
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
+        // ==================== GRAPH ANIMATION ====================
+        const graphObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const curves = entry.target.querySelectorAll('.curve-animated');
+                    curves.forEach(curve => {
+                        curve.classList.add('animate');
+                    });
+                }
             });
+        }, { threshold: 0.5 });
+
+        const graphContainer = document.getElementById('graph-container');
+        if (graphContainer) {
+            graphObserver.observe(graphContainer);
         }
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            goToSlide(currentSlide);
-        }
-
-        // Click on dots
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                goToSlide(index);
-                resetAutoplay();
+        // Also trigger hero curve animation on load
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.hero-bg-curve .curve-animated').forEach(curve => {
+                setTimeout(() => {
+                    curve.classList.add('animate');
+                }, 500);
             });
         });
-
-        // Autoplay
-        function startAutoplay() {
-            autoplayInterval = setInterval(nextSlide, 5000);
-        }
-
-        function resetAutoplay() {
-            clearInterval(autoplayInterval);
-            startAutoplay();
-        }
-
-        startAutoplay();
-
-        // Mobile menu toggle (basic implementation)
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        });
-
-        // APY animation
-        const apyValue = document.querySelector('.apy-counter .value');
-        let apyDirection = 1;
-        let currentApy = 8.5;
-
-        setInterval(() => {
-            currentApy += (Math.random() * 0.1 - 0.05) * apyDirection;
-            if (currentApy > 9.0) apyDirection = -1;
-            if (currentApy < 8.0) apyDirection = 1;
-            apyValue.textContent = currentApy.toFixed(1) + '%';
-        }, 3000);
     </script>
 </body>
 </html>
