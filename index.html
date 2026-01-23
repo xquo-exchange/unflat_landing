@@ -69,6 +69,49 @@
       border-radius: 8px !important;
       border: 1px solid #484848 !important;
     }
+
+    /* Hide branding */
+    #getWaitlistContainer a[href*="getwaitlist.com"],
+    #getWaitlistContainerFooter a[href*="getwaitlist.com"],
+    #getWaitlistContainer a[href*="getwaitlist"],
+    #getWaitlistContainerFooter a[href*="getwaitlist"] {
+      display: none !important;
+      visibility: hidden !important;
+    }
+
+    /* Hide branding parent container */
+    #getWaitlistContainer > div > div:last-child,
+    #getWaitlistContainerFooter > div > div:last-child {
+      display: none !important;
+    }
+
+    /* Transparent background - blend with page */
+    #getWaitlistContainer > div,
+    #getWaitlistContainerFooter > div {
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
+    /* Button styling */
+    #getWaitlistContainer button,
+    #getWaitlistContainerFooter button {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      white-space: nowrap !important;
+      padding: 10px 16px !important;
+      font-size: 13px !important;
+    }
+
+    /* Social proof */
+    .social-proof {
+      font-family: 'PP Frama', 'PP Frama Text', sans-serif;
+      color: rgba(245, 246, 255, 0.75);
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+    }
   </style>
 </head>
 <body>
@@ -82,23 +125,30 @@
   </div>
   <div id="w-node-_32415b6e-033b-2369-9245-895fafdf5deb-097cc16c" class="div-block-8">
     <div class="h1 light">Join the waiting list</div>
+    <div class="social-proof">7,000+ have already tested our MVP</div>
     <div id="getWaitlistContainer" data-waitlist_id="32433" data-widget_type="WIDGET_3"></div>
     <div class="div-block-6 card">
       <div class="div-block-5">
-        <div class="h2 light">🥇 First 500</div>
-        <div class="h1-image card">+2% boost</div>
+        <div class="h1-image card" style="font-size: 24px; font-weight: 600;">Earn up to 10.5% APY</div>
       </div>
       <div class="div-block-5">
-        <div class="h2 light">🥈 Next 1,500</div>
-        <div class="h1-image card">+1.5% boost</div>
+        <div class="h2 light">First 500</div>
+        <div class="h1-image card">+2.0%</div>
       </div>
       <div class="div-block-5">
-        <div class="h2 light">🥉 Next 3,000</div>
-        <div class="h1-image card">+1% boost</div>
+        <div class="h2 light">Next 1,500</div>
+        <div class="h1-image card">+1.5%</div>
       </div>
       <div class="div-block-5">
-        <div class="h2 light">🎁 Invite friends</div>
+        <div class="h2 light">Next 3,000</div>
+        <div class="h1-image card">+1.0%</div>
+      </div>
+      <div class="div-block-5">
+        <div class="h2 light">Invite friends</div>
         <div class="h1-image card">+0.5% each</div>
+      </div>
+      <div class="div-block-5" style="justify-content: flex-start;">
+        <div class="h2 light" style="font-size: 10px; opacity: 0.5;">Max 3 friends • Valid 1 month after launch</div>
       </div>
     </div>
   </div>
@@ -231,6 +281,7 @@
   </div>
   <div class="block2-3">
     <div class="h1 light">Join the waiting list</div>
+    <div class="social-proof">7,000+ have already tested our MVP</div>
     <div id="getWaitlistContainerFooter" data-waitlist_id="32433" data-widget_type="WIDGET_3"></div>
   </div>
   <div class="frame-31">
