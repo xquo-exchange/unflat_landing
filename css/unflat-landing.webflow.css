@@ -302,20 +302,20 @@
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  padding: 5vh 0 5vh 10vw;
+  padding: 5vh 10vw;
   text-decoration: none;
   display: flex;
 }
 
 .frame {
-  grid-row-gap: 10vh;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 29%;
+  grid-row: span 2;
+  display: grid;
+  grid-template-rows: subgrid;
+  row-gap: 10vh;
+  justify-items: start;
+  align-items: start;
   height: auto;
   text-decoration: none;
-  display: flex;
 }
 
 .text-2 {
@@ -324,7 +324,6 @@
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  height: 10vh;
   text-decoration: none;
   display: flex;
 }
@@ -787,11 +786,11 @@
 .div-block-3 {
   grid-column-gap: 2vw;
   grid-row-gap: 2vw;
-  flex-flow: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr;
+  align-items: start;
   width: 100%;
-  display: flex;
+  display: grid;
 }
 
 .image-7 {
@@ -805,14 +804,14 @@
 .div-block-5 {
   border-top: 0px solid var(--_colors---white-u);
   border-bottom: 1px solid var(--_colors---white-u);
-  flex-flow: row;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2vw;
+  align-items: start;
   width: 100%;
   padding-top: 5vh;
   padding-left: 0;
   padding-right: 0;
-  display: flex;
 }
 
 .div-block-6 {
@@ -861,6 +860,8 @@
   font-family: PP Frama, Arial, sans-serif;
   font-size: 35px;
   font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 @media screen and (max-width: 991px) {
@@ -1053,7 +1054,7 @@
   .block2 {
     width: auto;
     margin-left: auto;
-    margin-right: 0;
+    margin-right: auto;
   }
 
   .frame {
@@ -1173,9 +1174,17 @@
   }
 
   .div-block-3 {
+    display: flex;
     flex-flow: column;
     justify-content: space-between;
     align-items: stretch;
+  }
+
+  .frame {
+    display: flex;
+    flex-direction: column;
+    grid-row: auto;
+    row-gap: 40px;
   }
 
   .image-7 {
@@ -1185,11 +1194,8 @@
   }
 
   .div-block-5 {
-    grid-column-gap: 1vh;
-    grid-row-gap: 1vh;
-    flex-flow: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    grid-template-columns: 1fr;
+    gap: 1vh;
   }
 
   .div-block-6 {
@@ -1297,7 +1303,10 @@
   }
 
   .frame {
-    grid-row-gap: 60px;
+    display: flex;
+    flex-direction: column;
+    grid-row: auto;
+    row-gap: 40px;
     width: 100%;
   }
 
@@ -1618,8 +1627,8 @@
   }
 
   .div-block-5 {
-    justify-content: flex-start;
-    align-items: flex-start;
+    grid-template-columns: 1fr;
+    gap: 1vh;
   }
 }
 
