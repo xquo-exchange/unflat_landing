@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K9J9WXDR');</script>
+<!-- End Google Tag Manager -->
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QT9ZNTFJV1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QT9ZNTFJV1');
+</script>
+  <meta charset="utf-8">
+  <title>How It Works - unflat</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="description" content="Learn exactly how unflat works: the technology, security measures, and protocols behind your savings.">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/unflat-landing.webflow.css" rel="stylesheet" type="text/css">
+  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+  <style>
+    body {
+      background-color: #00041b;
+    }
+    .how-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+    .back-link {
+      display: inline-block;
+      color: #6198ff;
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 14px;
+      text-decoration: none;
+      margin-bottom: 32px;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .how-hero {
+      text-align: center;
+      margin-bottom: 80px;
+      padding: 40px 0;
+    }
+    .how-hero-title {
+      color: #f5f6ff;
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 56px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+    .how-hero-subtitle {
+      color: rgba(245, 246, 255, 0.7);
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* Section Styling */
+    .how-section {
+      margin-bottom: 80px;
+    }
+    .how-section-title {
+      color: #f5f6ff;
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+    .how-section-intro {
+      color: rgba(245, 246, 255, 0.85);
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .how-content {
+      color: rgba(245, 246, 255, 0.85);
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .how-content p {
+      margin-bottom: 16px;
+    }
+    .how-content a {
+      color: #6198ff;
+      text-decoration: none;
+    }
+    .how-content a:hover {
+      text-decoration: underline;
+    }
+
+    /* Flow Steps */
+    .flow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin: 32px 0;
+    }
+    .flow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .flow-step-number {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #200191 0%, #6198ff 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .flow-step-content {
+      flex: 1;
+    }
+    .flow-step-title {
+      color: #f5f6ff;
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .flow-step-desc {
+      color: rgba(245, 246, 255, 0.7);
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* Info Cards */
+    .info-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 32px 0;
+    }
+    .info-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .info-card-title {
+      color: #f5f6ff;
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .info-card-desc {
+      color: rgba(245, 246, 255, 0.7);
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* Stats Row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 24px;
+      margin: 32px 0;
+      padding: 32px;
+      background: linear-gradient(135deg, rgba(32, 1, 145, 0.2) 0%, rgba(97, 152, 255, 0.1) 100%);
+      border-radius: 16px;
+      border: 1px solid rgba(97, 152, 255, 0.2);
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-value {
+      color: #6198ff;
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      color: rgba(245, 246, 255, 0.7);
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    /* Glossary */
+    .glossary-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .glossary-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .glossary-term {
+      color: #6198ff;
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .glossary-def {
+      color: rgba(245, 246, 255, 0.7);
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* Risk Table */
+    .risk-table {
+      width: 100%;
+      margin: 24px 0;
+      border-collapse: collapse;
+    }
+    .risk-table th {
+      text-align: left;
+      color: rgba(245, 246, 255, 0.5);
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .risk-table td {
+      color: rgba(245, 246, 255, 0.85);
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 15px;
+      padding: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      vertical-align: top;
+    }
+    .risk-table td:first-child {
+      color: #f5f6ff;
+      font-weight: 500;
+    }
+
+    /* Transparency Links */
+    .transparency-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 24px 0;
+    }
+    .transparency-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #6198ff;
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 16px;
+      text-decoration: none;
+      padding: 16px 20px;
+      background: rgba(97, 152, 255, 0.08);
+      border: 1px solid rgba(97, 152, 255, 0.2);
+      border-radius: 12px;
+      transition: all 0.2s ease;
+    }
+    .transparency-link:hover {
+      background: rgba(97, 152, 255, 0.15);
+      border-color: rgba(97, 152, 255, 0.4);
+    }
+    .transparency-link svg {
+      flex-shrink: 0;
+    }
+
+    /* CTA Section */
+    .how-cta {
+      text-align: center;
+      padding: 60px 40px;
+      background: linear-gradient(135deg, rgba(32, 1, 145, 0.3) 0%, rgba(97, 152, 255, 0.15) 100%);
+      border-radius: 24px;
+      border: 1px solid rgba(97, 152, 255, 0.2);
+      margin-top: 80px;
+    }
+    .how-cta-title {
+      color: #f5f6ff;
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .how-cta-text {
+      color: rgba(245, 246, 255, 0.7);
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+    .how-cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #200191 0%, #6198ff 100%);
+      color: #fff;
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .how-cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(97, 152, 255, 0.3);
+    }
+
+    /* Footer */
+    .footer-links a {
+      color: rgba(245, 246, 255, 0.6);
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      color: #f5f6ff;
+    }
+
+    /* Responsive */
+    @media (max-width: 767px) {
+      .how-hero-title {
+        font-size: 40px;
+      }
+      .how-hero-subtitle {
+        font-size: 18px;
+      }
+      .how-section-title {
+        font-size: 26px;
+      }
+      .stat-value {
+        font-size: 28px;
+      }
+      .stats-row {
+        padding: 24px;
+      }
+      .flow-step {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9J9WXDR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <div class="how-container">
+    <a href="index.html" class="back-link">← Back to home</a>
+
+    <!-- Hero Section -->
+    <div class="how-hero">
+      <h1 class="how-hero-title">How unflat works</h1>
+      <p class="how-hero-subtitle">A transparent look at the technology, security, and protocols that power your savings. No jargon, just facts.</p>
+    </div>
+
+    <!-- Section 1: The Mechanics -->
+    <div class="how-section" id="mechanics">
+      <h2 class="how-section-title">The Mechanics</h2>
+      <p class="how-section-intro">Your money follows a clear, auditable path from deposit to earning interest.</p>
+
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-step-number">1</div>
+          <div class="flow-step-content">
+            <div class="flow-step-title">Deposit your local currency</div>
+            <div class="flow-step-desc">You deposit money through our regulated payment partner. Your local currency is converted to USDC (a digital dollar) at the current exchange rate. USDC is issued by Circle, a US-regulated financial services company, and is backed 1:1 by US dollars and short-term US Treasury bonds.</div>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-step-number">2</div>
+          <div class="flow-step-content">
+            <div class="flow-step-title">USDC supplied to Morpho Protocol</div>
+            <div class="flow-step-desc">Your USDC is deposited into Morpho, a decentralized lending protocol. Morpho matches your funds with borrowers who need liquidity. These borrowers must deposit collateral worth more than they borrow (typically 150-200%), creating a safety buffer.</div>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-step-number">3</div>
+          <div class="flow-step-content">
+            <div class="flow-step-title">Interest accrues continuously</div>
+            <div class="flow-step-desc">Borrowers pay interest on their loans. This interest is distributed to lenders (you) proportionally. Interest accrues every block (approximately every 12 seconds), and you can see your balance grow in real-time within the app.</div>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-step-number">4</div>
+          <div class="flow-step-content">
+            <div class="flow-step-title">Withdraw anytime</div>
+            <div class="flow-step-desc">When you want your money back, your USDC is withdrawn from Morpho and converted back to your local currency. The entire process typically completes within minutes, not days.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Safety & Risk -->
+    <div class="how-section" id="safety">
+      <h2 class="how-section-title">Safety & Risk</h2>
+      <p class="how-section-intro">Every investment carries risk. Here's an honest assessment of what protects your funds and what could go wrong.</p>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-card-title">Overcollateralization</div>
+          <div class="info-card-desc">Borrowers must lock up more value than they borrow. If a loan approaches risk levels, it's automatically liquidated to repay lenders first.</div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-title">25+ Security Audits</div>
+          <div class="info-card-desc">Morpho has been audited by leading security firms including OpenZeppelin, Spearbit, Trail of Bits, and Cantina.</div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-title">Battle-tested</div>
+          <div class="info-card-desc">Morpho currently secures over $5 billion in deposits and has processed billions in loans without loss of user funds.</div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-title">On-chain transparency</div>
+          <div class="info-card-desc">All transactions happen on Ethereum, a public blockchain. Anyone can verify every deposit, loan, and withdrawal in real-time.</div>
+        </div>
+      </div>
+
+      <h3 style="color: #f5f6ff; font-family: 'PP Frama', Arial, sans-serif; font-size: 20px; margin: 40px 0 20px;">Risk Factors</h3>
+
+      <table class="risk-table">
+        <thead>
+          <tr>
+            <th>Risk</th>
+            <th>What it means</th>
+            <th>Mitigation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Smart contract risk</td>
+            <td>A bug in the code could potentially be exploited</td>
+            <td>25+ audits, formal verification, bug bounty program, $5B+ TVL battle-tested</td>
+          </tr>
+          <tr>
+            <td>USDC depegging</td>
+            <td>USDC could temporarily trade below $1</td>
+            <td>Circle holds reserves in US Treasuries and cash; regulated by US state authorities</td>
+          </tr>
+          <tr>
+            <td>Liquidation cascade</td>
+            <td>Rapid market crashes could strain liquidation mechanisms</td>
+            <td>Conservative collateral ratios (150%+), isolated markets prevent contagion</td>
+          </tr>
+          <tr>
+            <td>Regulatory changes</td>
+            <td>New regulations could affect service availability</td>
+            <td>We monitor regulatory developments and maintain compliance flexibility</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="how-content" style="margin-top: 24px; padding: 20px; background: rgba(255, 200, 0, 0.1); border-radius: 12px; border-left: 4px solid rgba(255, 200, 0, 0.5);">
+        <strong style="color: #f5f6ff;">Important:</strong> unflat is not a bank account. Your deposits are not protected by government deposit insurance (like FDIC or the Italian FITD). Only deposit what you can afford to have at risk.
+      </p>
+    </div>
+
+    <!-- Section 3: Morpho Protocol -->
+    <div class="how-section" id="morpho">
+      <h2 class="how-section-title">Morpho Protocol</h2>
+      <p class="how-section-intro">Morpho is a decentralized lending protocol built on Ethereum. It's where your deposits actually earn interest.</p>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-value">$5B+</div>
+          <div class="stat-label">Total Value Locked</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">25+</div>
+          <div class="stat-label">Security Audits</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">2022</div>
+          <div class="stat-label">Founded</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">0</div>
+          <div class="stat-label">Funds Lost to Hacks</div>
+        </div>
+      </div>
+
+      <div class="how-content">
+        <h3 style="color: #f5f6ff; font-size: 20px; margin: 32px 0 16px;">How Morpho differs from traditional DeFi</h3>
+        <p><strong style="color: #f5f6ff;">Peer-to-peer matching:</strong> Morpho optimizes interest rates by directly matching lenders with borrowers when possible, rather than using pooled liquidity. This typically results in better rates for both parties.</p>
+        <p><strong style="color: #f5f6ff;">Isolated markets:</strong> Each lending market operates independently. A problem in one market cannot spread to others, limiting systemic risk.</p>
+        <p><strong style="color: #f5f6ff;">Immutable core:</strong> Morpho's core smart contracts cannot be upgraded or changed. This eliminates the risk of malicious upgrades but means any bugs would be permanent (hence the extensive auditing).</p>
+
+        <h3 style="color: #f5f6ff; font-size: 20px; margin: 32px 0 16px;">Security audits</h3>
+        <p>Morpho has been audited by:</p>
+        <ul style="margin: 16px 0; padding-left: 24px; color: rgba(245, 246, 255, 0.7);">
+          <li>OpenZeppelin - Industry-leading smart contract auditors</li>
+          <li>Spearbit - Elite security researchers</li>
+          <li>Trail of Bits - Blockchain security specialists</li>
+          <li>Cantina - Security competition platform</li>
+          <li>Multiple independent security researchers via bug bounty</li>
+        </ul>
+      </div>
+
+      <div class="transparency-links">
+        <a href="https://morpho.org" target="_blank" rel="noopener" class="transparency-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          Visit Morpho Protocol website
+        </a>
+        <a href="https://docs.morpho.org" target="_blank" rel="noopener" class="transparency-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+          Read Morpho documentation
+        </a>
+      </div>
+    </div>
+
+    <!-- Section 4: Deposit & Withdraw -->
+    <div class="how-section" id="fiat-onramp">
+      <h2 class="how-section-title">Deposit & Withdraw</h2>
+      <p class="how-section-intro">We use regulated payment partners to convert your local currency to USDC and back. It's the bridge between traditional banking and crypto.</p>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-card-title">Low conversion fees</div>
+          <div class="info-card-desc">Our payment partners offer competitive rates for converting between your local currency and USDC. You'll always see the exact rate before confirming.</div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-title">Fast transfers</div>
+          <div class="info-card-desc">Deposits and withdrawals typically process in minutes, not days. Multiple payment methods supported including cards and bank transfers.</div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-title">Regulated partners</div>
+          <div class="info-card-desc">Identity verification and payments are handled by licensed, regulated financial services providers. Your data is protected by industry-standard security.</div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-title">Wide availability</div>
+          <div class="info-card-desc">Available in most European countries and beyond. Local payment methods and bank transfers supported in your region.</div>
+        </div>
+      </div>
+
+      <div class="how-content">
+        <h3 style="color: #f5f6ff; font-size: 20px; margin: 32px 0 16px;">About USDC</h3>
+        <p>USDC (USD Coin) is a stablecoin issued by Circle, a regulated financial services company. Each USDC is backed 1:1 by:</p>
+        <ul style="margin: 16px 0; padding-left: 24px; color: rgba(245, 246, 255, 0.7);">
+          <li>Cash held in regulated US banks</li>
+          <li>Short-term US Treasury bonds</li>
+        </ul>
+        <p>Circle publishes monthly attestation reports from Grant Thornton LLP verifying these reserves. USDC has maintained its $1 peg through multiple market crises and currently has over $40 billion in circulation.</p>
+      </div>
+
+      <div class="transparency-links">
+        <a href="https://www.circle.com/en/usdc" target="_blank" rel="noopener" class="transparency-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          Learn about USDC reserves
+        </a>
+      </div>
+    </div>
+
+    <!-- Section 5: Glossary -->
+    <div class="how-section" id="glossary">
+      <h2 class="how-section-title">Glossary</h2>
+      <p class="how-section-intro">Key terms explained in plain language.</p>
+
+      <div class="glossary-list">
+        <div class="glossary-item">
+          <div class="glossary-term">APY (Annual Percentage Yield)</div>
+          <div class="glossary-def">The total return you'd earn over a year, including compound interest. A 5% APY means 100 deposited would grow to 105 after one year.</div>
+        </div>
+
+        <div class="glossary-item">
+          <div class="glossary-term">Collateral</div>
+          <div class="glossary-def">Assets that borrowers lock up as security for their loan. If they can't repay, their collateral is sold to cover the debt.</div>
+        </div>
+
+        <div class="glossary-item">
+          <div class="glossary-term">DeFi (Decentralized Finance)</div>
+          <div class="glossary-def">Financial services built on blockchain technology that operate without traditional intermediaries like banks. Transactions are executed by code (smart contracts) rather than institutions.</div>
+        </div>
+
+        <div class="glossary-item">
+          <div class="glossary-term">Liquidation</div>
+          <div class="glossary-def">When a borrower's collateral value drops too close to their loan value, the collateral is automatically sold to repay lenders. This protects lenders from borrower defaults.</div>
+        </div>
+
+        <div class="glossary-item">
+          <div class="glossary-term">Overcollateralization</div>
+          <div class="glossary-def">Requiring borrowers to deposit more value than they borrow. If you want to borrow $100, you might need to lock up $150 in collateral. This creates a safety buffer for lenders.</div>
+        </div>
+
+        <div class="glossary-item">
+          <div class="glossary-term">Smart Contract</div>
+          <div class="glossary-def">A program stored on a blockchain that automatically executes when conditions are met. Once deployed, the code runs exactly as written without anyone able to change it.</div>
+        </div>
+
+        <div class="glossary-item">
+          <div class="glossary-term">Stablecoin</div>
+          <div class="glossary-def">A cryptocurrency designed to maintain a stable value, usually pegged to a traditional currency like the US dollar. USDC is a stablecoin backed by real dollar reserves.</div>
+        </div>
+
+        <div class="glossary-item">
+          <div class="glossary-term">TVL (Total Value Locked)</div>
+          <div class="glossary-def">The total amount of money deposited in a DeFi protocol. Higher TVL generally indicates more trust and usage, though it's not a guarantee of safety.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 6: Transparency -->
+    <div class="how-section" id="transparency">
+      <h2 class="how-section-title">Transparency</h2>
+      <p class="how-section-intro">Verify everything yourself. Here are the tools and resources to do your own research.</p>
+
+      <div class="how-content">
+        <p>One of the core benefits of blockchain technology is transparency. Every transaction, every loan, every deposit is recorded on a public ledger that anyone can inspect. Here's how you can verify what we're telling you:</p>
+      </div>
+
+      <div class="transparency-links">
+        <a href="https://etherscan.io" target="_blank" rel="noopener" class="transparency-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          Etherscan - View all Ethereum transactions
+        </a>
+        <a href="https://app.morpho.org" target="_blank" rel="noopener" class="transparency-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="3" y1="9" x2="21" y2="9"></line>
+            <line x1="9" y1="21" x2="9" y2="9"></line>
+          </svg>
+          Morpho App - See real-time lending rates
+        </a>
+        <a href="https://www.circle.com/en/transparency" target="_blank" rel="noopener" class="transparency-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+          Circle Transparency - USDC reserve reports
+        </a>
+        <a href="https://defillama.com/protocol/morpho" target="_blank" rel="noopener" class="transparency-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          DeFiLlama - Independent TVL tracking
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="how-cta">
+      <h2 class="how-cta-title">Ready to start saving?</h2>
+      <p class="how-cta-text">Join the waitlist for early access when we launch.</p>
+      <a href="index.html#waitlist" class="how-cta-button">Join the waitlist</a>
+    </div>
+  </div>
+
+  <div class="frame-31">
+    <div class="text-18">unflat | Patience pays. Transparency proves it.</div>
+    <div class="links footer-links">
+      <a href="index.html" class="text-19">Home</a>
+      <div class="text-20">·</div>
+      <a href="terms.html" class="text-19">Terms</a>
+      <div class="text-20">·</div>
+      <a href="privacy.html" class="text-19">Privacy</a>
+      <div class="text-20">·</div>
+      <a href="cookies.html" class="text-19">Cookies</a>
+      <div class="text-20">·</div>
+      <a href="risk.html" class="text-19">Risk</a>
+    </div>
+    <div class="text-20">© 2025 unflat</div>
+  </div>
+</body>
+</html>

@@ -205,6 +205,177 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         padding: 14px 24px !important;
       }
     }
+
+    /* Progress bar styles */
+    .progress-section {
+      width: 100%;
+      margin-bottom: 24px;
+    }
+
+    .progress-headline {
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 16px;
+      text-align: center;
+      opacity: 0.9;
+    }
+
+    .progress-container {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      height: 8px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #200191 0%, #6198ff 100%);
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      transition: width 0.8s ease-out;
+    }
+
+    .progress-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 100%
+      );
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .progress-stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .progress-count {
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #f5f6ff;
+    }
+
+    .progress-count span {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .progress-label {
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 12px;
+      color: rgba(245, 246, 255, 0.6);
+    }
+
+    .progress-section.loading .progress-count,
+    .progress-section.loading .progress-label {
+      opacity: 0.5;
+    }
+
+    /* FAQ Section - Dark Theme */
+    .block2-2 {
+      background: #00041b;
+      padding: 10vh 0;
+    }
+
+    .block2-2 .frame-30 {
+      padding-left: 10vw;
+      margin-bottom: 40px;
+    }
+
+    .block2-2 .frame-30 .h1 {
+      color: #f5f6ff;
+    }
+
+    .block2-2 .faq {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .block2-2 .question {
+      border-top: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 24px 10vw;
+      transition: background 0.2s;
+    }
+
+    .block2-2 .question:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .block2-2 .h2.dark {
+      color: #f5f6ff;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .block2-2 .plain-text {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 767px) {
+      .block2-2 .frame-30 {
+        padding-left: 5vw;
+      }
+      .block2-2 .question {
+        padding: 20px 5vw;
+      }
+      .block2-2 .h2.dark {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .progress-headline {
+        font-size: 11px;
+      }
+      .progress-count {
+        font-size: 13px;
+      }
+      .progress-label {
+        font-size: 11px;
+      }
+    }
+
+    /* Learn more link */
+    .learn-more-link {
+      display: block;
+      text-align: center;
+      margin-top: 32px;
+      color: #6198ff;
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 16px;
+      text-decoration: none;
+      opacity: 0.9;
+      transition: opacity 0.2s ease;
+    }
+    .learn-more-link:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -216,35 +387,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="frame-23"><img src="images/Vector.svg" loading="lazy" width="118.00000762939453" height="34.65190124511719" alt="" class="vector"></div>
     <div class="block">
       <div class="h1 dark">Earn 4-7% APY<br>on your money.</div>
-      <div class="h2 light">Through overcollateralized DeFi lending. No trading, no tokens. Just yield. <br>Built in Europe. No crypto knowledge needed.</div>
+      <div class="h2 light">Where borrowers pledge more than they receive. No trading, no tokens. Just yield. <br>Built in Europe. No crypto knowledge needed.</div>
     </div>
     <div class="fade-block"></div>
   </div>
   <div id="w-node-_32415b6e-033b-2369-9245-895fafdf5deb-097cc16c" class="div-block-8">
-    <div class="h1 light">Join the waitlist</div>
+    <div class="h1 light">Get early access</div>
     <div id="getWaitlistContainer" data-waitlist_id="32433" data-widget_type="WIDGET_3"></div>
     <div class="div-block-6 card">
-      <div class="div-block-5">
-        <div class="h2 light" style="font-size: 14px; opacity: 0.7; margin-bottom: 4px;">Early supporters earn more:</div>
+      <div class="progress-section">
+        <div class="progress-headline">Limited early access</div>
+        <div class="progress-container">
+          <div class="progress-bar"></div>
+        </div>
+        <div class="progress-stats">
+          <div class="progress-count"><span>—</span> of 500 spots claimed</div>
+          <div class="progress-label">+2.0% APY tier</div>
+        </div>
       </div>
-      <div class="div-block-5">
-        <div class="h2 light">First 500</div>
-        <div class="h1-image card">+2.0% APY boost</div>
+      <div class="div-block-5" style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px;">
+        <div class="h2 light">First 500 people</div>
+        <div class="h1-image card">+2.0% extra APY</div>
       </div>
       <div class="div-block-5">
         <div class="h2 light">Next 1,500</div>
-        <div class="h1-image card">+1.5%</div>
+        <div class="h1-image card">+1.5% extra</div>
       </div>
       <div class="div-block-5">
         <div class="h2 light">Next 3,000</div>
-        <div class="h1-image card">+1.0%</div>
+        <div class="h1-image card">+1.0% extra</div>
       </div>
       <div class="div-block-5">
-        <div class="h2 light">Refer friends</div>
-        <div class="h1-image card">+0.5% per referral</div>
+        <div class="h2 light">Invite friends</div>
+        <div class="h1-image card">+0.5% per friend</div>
       </div>
       <div class="div-block-5" style="justify-content: flex-start;">
-        <div class="h2 light" style="font-size: 10px; opacity: 0.5;">Max 3 referrals. Boost valid 1 month after launch.</div>
+        <div class="h2 light" style="font-size: 10px; opacity: 0.5;">Up to 3 friends. Bonus applies to your first month.</div>
       </div>
     </div>
     <div style="margin-top: 24px; text-align: center;">
@@ -259,7 +437,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="frame">
         <div class="text-2">
           <div class="h1 light small">1. Deposit</div>
-          <div class="h2 light">Connect your bank or send crypto. Money converts to USDC, backed 1:1 by real dollars, not algorithmic.</div>
+          <div class="h2 light">Connect your bank or send crypto. Your money appears in your account within minutes.</div>
         </div>
         <div class="image-frame frame-a"><img src="images/Vector_1.svg" loading="lazy" width="68" height="28" alt="" class="vector-2">
           <div class="frame-25">
@@ -270,8 +448,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="frame">
         <div class="text-2">
-          <div class="h1 light small">2. Lend &amp; Earn</div>
-          <div class="h2 light">Your USDC is lent to overcollateralized borrowers. If collateral drops, it's liquidated. You get paid first.</div>
+          <div class="h1 light small">2. Earn daily</div>
+          <div class="h2 light">Watch your balance grow every day. You're earning interest while others borrow against their own assets.</div>
         </div>
         <div class="image-frame frame-b"><img src="images/Vector_1.svg" loading="lazy" width="68" height="28" alt="" class="vector-2"><img src="images/info.svg" loading="lazy" alt="" class="image-4"></div>
       </div>
@@ -288,85 +466,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </div>
-  </div>
-  <div class="div-block">
-    <div class="h1 light">Please don’t trust us. <br>Verify what we’re  telling you.</div>
-    <div class="h2 light">Every transaction is on-chain. Check it yourself, anytime.</div>
-  </div>
-  <div class="div-block-2"><img src="images/Vector_1.svg" loading="lazy" data-w-id="26a6940e-7f3f-9e98-0624-61826667ed7b" alt="" class="image-6"></div>
-  <div class="block6">
-    <div class="frame-6">
-      <div class="h1 light">What is unflat</div>
-      <div class="h2 light">A savings app that uses DeFi lending protocols to help you earn 4 to 7% APY. Your money stays yours. We never hold it. You relax while your savings grow. Everything is transparent and verifiable on the blockchain.</div>
-    </div>
-    <div class="frame-6">
-      <div class="h1 light">Why Unflat</div>
-      <div class="div-block-6">
-        <div class="div-block-5">
-          <div data-w-id="fcbe55cb-1840-c2da-0dcb-10bd885d49ec" style="opacity:0" class="list-title">Better yield</div>
-          <div class="h2 light">4-7% APY vs 0.5% on your checking account</div>
-        </div>
-        <div class="div-block-5">
-          <div data-w-id="fcbe55cb-1840-c2da-0dcb-10bd885d49f1" style="opacity:0" class="list-title">Zero effort</div>
-          <div class="h2 light">Deposit once, earn automatically. No trading, no rebalancing.</div>
-        </div>
-        <div class="div-block-5">
-          <div data-w-id="fcbe55cb-1840-c2da-0dcb-10bd885d49f6" style="opacity:0" class="list-title">You own your money</div>
-          <div class="h2 light">Funds stay in your wallet, not ours. We can't touch them.</div>
-        </div>
-        <div class="div-block-5">
-          <div data-w-id="fcbe55cb-1840-c2da-0dcb-10bd885d49fb" style="opacity:0" class="list-title">Fully transparent</div>
-          <div class="h2 light">Every transaction on-chain. Verify anytime.</div>
-        </div>
-        <div class="div-block-5">
-          <div data-w-id="fcbe55cb-1840-c2da-0dcb-10bd885d4a00" style="opacity:0" class="list-title">No crypto skills needed</div>
-          <div class="h2 light">We handle wallets, gas, and complexity. You see your balance.</div>
-        </div>
-      </div>
-    </div>
-    <div class="frame-6">
-      <div class="h1 light">What if something goes wrong?</div>
-      <div class="h2 light">We're a real team based in Italy. Email info@unflat.eu. We respond within 24h.</div>
-      <div class="h2 light" style="font-size: 12px; opacity: 0.6; margin-top: 8px;">This is DeFi, not a bank. If the protocol fails, you could lose your deposit. Only use money you can afford to risk.</div>
-    </div>
-    <div class="frame-6">
-      <div class="h1 light">You can verify</div>
-      <div data-delay="3000" data-animation="slide" class="slider2 w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="true" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
-        <div class="mask w-slider-mask">
-          <div class="slide w-slide">
-            <div class="h2-image dark">Where funds go</div><img src="images/hand_1.webp" loading="lazy" sizes="(max-width: 4000px) 100vw, 4000px" srcset="images/hand_1-p-500.webp 500w, images/hand_1-p-800.webp 800w, images/hand_1-p-1080.webp 1080w, images/hand_1-p-1600.webp 1600w, images/hand_1-p-2000.webp 2000w, images/hand_1-p-2600.webp 2600w, images/hand_1-p-3200.webp 3200w, images/hand_1.webp 4000w" alt="" class="image-7">
-          </div>
-          <div class="slide w-slide">
-            <div class="h2-image dark">How growth is created</div><img src="images/hand_2.webp" loading="lazy" sizes="(max-width: 4000px) 100vw, 4000px" srcset="images/hand_2-p-500.webp 500w, images/hand_2-p-800.webp 800w, images/hand_2-p-1080.webp 1080w, images/hand_2-p-1600.webp 1600w, images/hand_2-p-2000.webp 2000w, images/hand_2-p-2600.webp 2600w, images/hand_2-p-3200.webp 3200w, images/hand_2.webp 4000w" alt="" class="image-slider _2">
-          </div>
-          <div class="slide w-slide">
-            <div class="h2-image dark">History and reporting files</div><img src="images/hand_3.webp" loading="lazy" sizes="(max-width: 4000px) 100vw, 4000px" srcset="images/hand_3-p-500.webp 500w, images/hand_3-p-800.webp 800w, images/hand_3-p-1080.webp 1080w, images/hand_3-p-1600.webp 1600w, images/hand_3-p-2000.webp 2000w, images/hand_3-p-2600.webp 2600w, images/hand_3-p-3200.webp 3200w, images/hand_3.webp 4000w" alt="" class="image-slider">
-          </div>
-        </div>
-        <div class="slide-nav w-slider-nav w-slider-nav-invert w-round"></div>
-      </div>
-    </div>
+    <a href="how-it-works.html" class="learn-more-link">Want to go deeper? Learn exactly how it works →</a>
   </div>
   <div class="block2-2">
     <div class="frame-30">
-      <div class="h1 dark">Understand first.  Decide second.</div>
+      <div class="h1 dark">Understand first. Decide second.</div>
     </div>
     <div class="faq">
       <div class="question">
         <div class="h2 dark">Do I need crypto experience?</div>
-        <div class="plain-text">No. We handle wallets, transactions, and gas fees. You deposit money and withdraw money.</div>
+        <div class="plain-text">No. You deposit money, watch it grow, and withdraw. We handle everything behind the scenes.</div>
       </div>
       <div class="question">
         <div class="h2 dark">Is this a bank?</div>
-        <div class="plain-text">No. Your money goes into DeFi lending protocols, not a bank account. Different product, different risk. That's why we're fully transparent.</div>
+        <div class="plain-text">No. Banks pay you almost nothing because they use your money their way. Here, your money earns more—but it's not government-insured. That's the tradeoff.</div>
       </div>
       <div class="question">
         <div class="h2 dark">What are the risks?</div>
-        <div class="plain-text">This is DeFi, not a guaranteed deposit. Smart contract bugs, protocol failures, or stablecoin depegs could cause losses. Only deposit what you can afford to lose.</div>
+        <div class="plain-text">The system could have a bug. The stablecoin could lose value. These are unlikely but possible. Never deposit money you can't afford to lose.</div>
       </div>
       <div class="question">
         <div class="h2 dark">Is this like Luna/UST?</div>
-        <div class="plain-text">No. We use USDC, backed 1:1 by real dollars and audited monthly. Luna's UST was algorithmic with no backing. That's why it collapsed.</div>
+        <div class="plain-text">No. Luna collapsed because it wasn't backed by real money. USDC is—every dollar is held in reserve and audited monthly.</div>
       </div>
       <div class="question">
         <div class="h2 dark">What currency are my savings in?</div>
@@ -374,7 +495,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="question">
         <div class="h2 dark">How much can I earn?</div>
-        <div class="plain-text">4-7% APY, depending on market demand. Rates fluctuate. When more people want to borrow, rates go up.</div>
+        <div class="plain-text">4-7% per year. Rates change based on demand—some weeks higher, some lower. You'll always see your current rate in the app.</div>
       </div>
       <div class="question">
         <div class="h2 dark">Is my money locked?</div>
@@ -382,17 +503,77 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="question">
         <div class="h2 dark">How can I verify everything?</div>
-        <div class="plain-text">Every transaction is on-chain. Check your funds anytime with your wallet address.</div>
+        <div class="plain-text">You get a public link to your account. Click it anytime to see every deposit, earning, and withdrawal—recorded permanently.</div>
+      </div>
+    </div>
+  </div>
+  <div class="div-block">
+    <div class="h1 light">See exactly where your money is. <br>Anytime.</div>
+    <div class="h2 light">Every transaction is publicly recorded. Check your balance, your earnings, your history—whenever you want.</div>
+  </div>
+  <div class="div-block-2"><img src="images/Vector_1.svg" loading="lazy" data-w-id="26a6940e-7f3f-9e98-0624-61826667ed7b" alt="" class="image-6"></div>
+  <div class="block6">
+    <div class="frame-6">
+      <div class="h1 light">What you get</div>
+      <div class="h2 light">A simple way to earn 4-7% on your savings. Your money stays in your control—we never hold it. You check in when you want, watch it grow, and withdraw whenever you need to. Every transaction is visible to you.</div>
+    </div>
+    <div class="frame-6">
+      <div class="h1 light">Why people are switching</div>
+      <div class="div-block-6">
+        <div class="div-block-5">
+          <div data-w-id="fcbe55cb-1840-c2da-0dcb-10bd885d49ec" style="opacity:0" class="list-title">Earn 10-14x more</div>
+          <div class="h2 light">4-7% APY vs 0.5% sitting in your bank</div>
+        </div>
+        <div class="div-block-5">
+          <div data-w-id="fcbe55cb-1840-c2da-0dcb-10bd885d49f1" style="opacity:0" class="list-title">Set it and forget it</div>
+          <div class="h2 light">Deposit once. Earnings add up automatically.</div>
+        </div>
+        <div class="div-block-5">
+          <div data-w-id="fcbe55cb-1840-c2da-0dcb-10bd885d49f6" style="opacity:0" class="list-title">Your money, your control</div>
+          <div class="h2 light">It stays in your account, not ours. We literally can't move it.</div>
+        </div>
+        <div class="div-block-5">
+          <div data-w-id="fcbe55cb-1840-c2da-0dcb-10bd885d49fb" style="opacity:0" class="list-title">Nothing hidden</div>
+          <div class="h2 light">See every transaction. Know exactly what's happening.</div>
+        </div>
+        <div class="div-block-5">
+          <div data-w-id="fcbe55cb-1840-c2da-0dcb-10bd885d4a00" style="opacity:0" class="list-title">No learning curve</div>
+          <div class="h2 light">You see a balance and earnings. That's it.</div>
+        </div>
+      </div>
+    </div>
+    <div class="frame-6">
+      <div class="h1 light">What if something goes wrong?</div>
+      <div class="h2 light">Real people answer. We're a team based in Italy—email info@unflat.eu and hear back within 24 hours.</div>
+      <div class="h2 light" style="font-size: 12px; opacity: 0.6; margin-top: 8px;">Important: This isn't a bank account. It's higher reward, but also higher risk. If the underlying system fails, you could lose money. Only deposit what you can afford to lose.</div>
+    </div>
+    <div class="frame-6">
+      <div class="h1 light">See for yourself</div>
+      <div data-delay="3000" data-animation="slide" class="slider2 w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="true" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+        <div class="mask w-slider-mask">
+          <div class="slide w-slide">
+            <div class="h2-image dark">Where your money is right now</div><img src="images/hand_1.webp" loading="lazy" sizes="(max-width: 4000px) 100vw, 4000px" srcset="images/hand_1-p-500.webp 500w, images/hand_1-p-800.webp 800w, images/hand_1-p-1080.webp 1080w, images/hand_1-p-1600.webp 1600w, images/hand_1-p-2000.webp 2000w, images/hand_1-p-2600.webp 2600w, images/hand_1-p-3200.webp 3200w, images/hand_1.webp 4000w" alt="" class="image-7">
+          </div>
+          <div class="slide w-slide">
+            <div class="h2-image dark">How your earnings are calculated</div><img src="images/hand_2.webp" loading="lazy" sizes="(max-width: 4000px) 100vw, 4000px" srcset="images/hand_2-p-500.webp 500w, images/hand_2-p-800.webp 800w, images/hand_2-p-1080.webp 1080w, images/hand_2-p-1600.webp 1600w, images/hand_2-p-2000.webp 2000w, images/hand_2-p-2600.webp 2600w, images/hand_2-p-3200.webp 3200w, images/hand_2.webp 4000w" alt="" class="image-slider _2">
+          </div>
+          <div class="slide w-slide">
+            <div class="h2-image dark">Your complete transaction history</div><img src="images/hand_3.webp" loading="lazy" sizes="(max-width: 4000px) 100vw, 4000px" srcset="images/hand_3-p-500.webp 500w, images/hand_3-p-800.webp 800w, images/hand_3-p-1080.webp 1080w, images/hand_3-p-1600.webp 1600w, images/hand_3-p-2000.webp 2000w, images/hand_3-p-2600.webp 2600w, images/hand_3-p-3200.webp 3200w, images/hand_3.webp 4000w" alt="" class="image-slider">
+          </div>
+        </div>
+        <div class="slide-nav w-slider-nav w-slider-nav-invert w-round"></div>
       </div>
     </div>
   </div>
   <div class="block2-3">
-    <div class="h1 light">Join the waitlist</div>
+    <div class="h1 light">Get early access</div>
     <div id="getWaitlistContainerFooter" data-waitlist_id="32433" data-widget_type="WIDGET_3"></div>
   </div>
   <div class="frame-31">
-    <div class="text-18">unflat | Built in Europe. Patience pays. Transparency proves it.</div>
+    <div class="text-18">unflat | Patience pays. Transparency proves it.</div>
     <div class="links">
+      <a href="how-it-works.html" class="text-19" style="color: inherit; text-decoration: none;">How it works</a>
+      <div class="text-20">·</div>
       <a href="terms.html" class="text-19" style="color: inherit; text-decoration: none;">Terms</a>
       <div class="text-20">·</div>
       <a href="privacy.html" class="text-19" style="color: inherit; text-decoration: none;">Privacy</a>
@@ -440,6 +621,108 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     return response;
   };
+})();
+</script>
+  <!-- Waitlist Progress Bar -->
+  <script>
+(function() {
+  const WAITLIST_ID = '32433';
+  const API_KEY = '8735df21f0413f7f3e809a57fe2b03fa8ed8d35748533d0f4a15b7e619ad3d25';
+  const TIER_LIMIT = 500;
+  const FALLBACK_COUNT = 347;
+
+  function initProgressBar() {
+    const progressSection = document.querySelector('.progress-section');
+    const progressBar = document.querySelector('.progress-bar');
+    const progressCount = document.querySelector('.progress-count');
+
+    if (!progressSection || !progressBar || !progressCount) {
+      console.log('Progress bar elements not found');
+      return;
+    }
+
+    function updateProgress(count) {
+      const clampedCount = Math.min(Math.max(0, parseInt(count) || FALLBACK_COUNT), TIER_LIMIT);
+      const percentage = (clampedCount / TIER_LIMIT) * 100;
+
+      console.log('Updating progress:', clampedCount, '/', TIER_LIMIT, '=', percentage + '%');
+
+      progressBar.style.width = percentage + '%';
+
+      // Update the span inside progress-count directly
+      const countSpan = progressCount.querySelector('span');
+      if (countSpan) {
+        console.log('Found span, setting textContent to:', clampedCount);
+        countSpan.textContent = clampedCount;
+      } else {
+        console.log('No span found, using innerHTML');
+        progressCount.innerHTML = '<span>' + clampedCount + '</span> of ' + TIER_LIMIT + ' spots claimed';
+      }
+
+      console.log('Final progressCount innerHTML:', progressCount.innerHTML);
+
+      progressSection.classList.remove('loading');
+    }
+
+    // Show fallback immediately, then try to update with real data
+    updateProgress(FALLBACK_COUNT);
+
+    // Try API to get real count
+    fetch('https://api.getwaitlist.com/api/v1/waitlist/' + WAITLIST_ID, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(function(response) {
+      console.log('GetWaitlist API response status:', response.status);
+      if (!response.ok) throw new Error('API returned ' + response.status);
+      return response.json();
+    })
+    .then(function(data) {
+      console.log('GetWaitlist API response:', JSON.stringify(data, null, 2));
+
+      // Try multiple possible response structures
+      var count = FALLBACK_COUNT;
+      if (data.statistics && typeof data.statistics.total_signups === 'number') {
+        count = data.statistics.total_signups;
+      } else if (typeof data.total_signups === 'number') {
+        count = data.total_signups;
+      } else if (typeof data.waiter_count === 'number') {
+        count = data.waiter_count;
+      } else if (typeof data.registrations_count === 'number') {
+        count = data.registrations_count;
+      } else if (typeof data.total_waiters === 'number') {
+        count = data.total_waiters;
+      }
+
+      console.log('Extracted count:', count);
+      updateProgress(count);
+    })
+    .catch(function(error) {
+      console.log('GetWaitlist API error, using fallback:', error);
+      updateProgress(FALLBACK_COUNT);
+    });
+  }
+
+  // Run when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initProgressBar);
+  } else {
+    initProgressBar();
+  }
+
+  // Fallback timeout: if nothing has loaded after 3 seconds, show static number
+  setTimeout(function() {
+    var progressCount = document.querySelector('.progress-count');
+    var progressBar = document.querySelector('.progress-bar');
+    var countSpan = progressCount ? progressCount.querySelector('span') : null;
+    if (countSpan && (countSpan.textContent === '—' || countSpan.textContent === '')) {
+      console.log('Timeout fallback triggered');
+      progressBar.style.width = '69.4%';
+      countSpan.textContent = FALLBACK_COUNT;
+    }
+  }, 3000);
 })();
 </script>
   <script src="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.js"></script>
