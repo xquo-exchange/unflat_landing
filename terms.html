@@ -101,12 +101,128 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .back-link:hover {
       text-decoration: underline;
     }
-    .footer-links a {
-      color: rgba(245, 246, 255, 0.6);
-      text-decoration: none;
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: #00041b;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 64px 24px 32px;
     }
-    .footer-links a:hover {
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand {
+      flex: 1;
+      max-width: 280px;
+    }
+    .footer-logo {
+      width: 100px;
+      margin-bottom: 16px;
+    }
+    .footer-tagline {
+      color: rgba(245, 246, 255, 0.6);
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .footer-columns {
+      display: flex;
+      gap: 64px;
+    }
+    .footer-column {
+      min-width: 120px;
+    }
+    .footer-column-title {
       color: #f5f6ff;
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-column li {
+      margin-bottom: 10px;
+    }
+    .footer-column a {
+      color: rgba(245, 246, 255, 0.6);
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 14px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-column a:hover {
+      color: #f5f6ff;
+    }
+    .footer-social {
+      display: flex;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .footer-social a {
+      color: rgba(245, 246, 255, 0.6);
+      transition: color 0.2s;
+    }
+    .footer-social a:hover {
+      color: #f5f6ff;
+    }
+    .footer-social svg {
+      width: 20px;
+      height: 20px;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+    }
+    .footer-disclaimer {
+      color: rgba(245, 246, 255, 0.4);
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .footer-copyright {
+      color: rgba(245, 246, 255, 0.4);
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 12px;
+    }
+    @media (max-width: 768px) {
+      .footer-top {
+        flex-direction: column;
+        gap: 40px;
+      }
+      .footer-brand {
+        max-width: 100%;
+      }
+      .footer-columns {
+        flex-wrap: wrap;
+        gap: 32px;
+      }
+      .footer-column {
+        min-width: calc(50% - 16px);
+      }
+    }
+    @media (max-width: 480px) {
+      .site-footer {
+        padding: 48px 20px 24px;
+      }
+      .footer-columns {
+        gap: 24px;
+      }
+      .footer-column {
+        min-width: 100%;
+      }
     }
 
     /* Responsive */
@@ -169,24 +285,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="legal-content">
       <h2>1. Introduction</h2>
-      <p>Welcome to the Unflat website (the "Website"), accessible at www.unflat.finance. These Website Terms of Use ("Terms") govern your access to and use of this Website.</p>
-      <p>The Website is operated by Unflat S.r.l., a company in the process of incorporation under the laws of Italy ("Unflat", "we", "us", or "our").</p>
+      <p>Welcome to the unflat website (the "Website"), accessible at www.unflat.finance. These Website Terms of Use ("Terms") govern your access to and use of this Website.</p>
+      <p>The Website is operated by unflat S.r.l., a company in the process of incorporation under the laws of Italy ("unflat", "we", "us", or "our").</p>
       <p>Contact: <a href="mailto:info@unflat.eu">info@unflat.eu</a></p>
       <p>By accessing or using this Website, you agree to be bound by these Terms. If you do not agree, please do not use this Website.</p>
 
       <h2>2. Website Purpose: Pre-Launch Phase</h2>
-      <p>The Unflat mobile application (the "App") is currently under development and has not yet launched. This Website serves solely to:</p>
+      <p>The unflat mobile application (the "App") is currently under development and has not yet launched. This Website serves solely to:</p>
       <ul>
-        <li>Provide general information about the planned Unflat App;</li>
+        <li>Provide general information about the planned unflat App;</li>
         <li>Allow interested users to register for a waiting list;</li>
         <li>Collect email addresses for marketing communications (with your consent).</li>
       </ul>
-      <p>Through this Website, Unflat does not currently offer any financial services, investment services, payment services, cryptocurrency services, or any other services. The Website is for informational and marketing purposes only.</p>
+      <p>Through this Website, unflat does not currently offer any financial services, investment services, payment services, cryptocurrency services, or any other services. The Website is for informational and marketing purposes only.</p>
 
       <h2>3. Waiting List</h2>
       <p>You may register for our waiting list by providing your email address. Registration is voluntary, free of charge, and does not guarantee access to the App or any benefits.</p>
       <p>The waiting list is hosted by GetWaitlist (getwaitlist.com), a third-party service provider.</p>
-      <p>Promotional incentives (such as yield boosts) offered to early registrants are illustrative only, do not constitute binding offers, and may be modified or cancelled at Unflat's discretion.</p>
+      <p>Promotional incentives (such as yield boosts) offered to early registrants are illustrative only, do not constitute binding offers, and may be modified or cancelled at unflat's discretion.</p>
 
       <h2>4. Important Disclaimers</h2>
 
@@ -194,19 +310,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>Nothing on this Website constitutes financial, investment, legal, or tax advice. Information about potential yields (such as "4-7% APY") is illustrative only and does not guarantee future results.</p>
 
       <h3>4.2 Regulatory Status</h3>
-      <p>Unflat is not a bank, investment firm, payment service provider, or any other regulated financial institution. Unflat is not authorised or supervised by Banca d'Italia, CONSOB, or any financial regulatory authority.</p>
+      <p>unflat is not a bank, investment firm, payment service provider, or any other regulated financial institution. unflat is not authorised or supervised by Banca d'Italia, CONSOB, or any financial regulatory authority.</p>
 
       <h3>4.3 Risk Warning</h3>
       <p>The planned App will interface with decentralised finance (DeFi) protocols, which involve significant risks including the potential total loss of your assets. Please see our <a href="risk.html">Risk Disclosure</a>.</p>
 
       <h3>4.4 No Guarantee of Launch</h3>
-      <p>Unflat reserves the right to modify, delay, or cancel the App launch at any time. Registration on the waiting list creates no obligation for Unflat.</p>
+      <p>unflat reserves the right to modify, delay, or cancel the App launch at any time. Registration on the waiting list creates no obligation for unflat.</p>
 
       <h2>5. Intellectual Property</h2>
-      <p>All content on this Website is the property of Unflat or its licensors and is protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works without our prior written consent.</p>
+      <p>All content on this Website is the property of unflat or its licensors and is protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works without our prior written consent.</p>
 
       <h2>6. Limitation of Liability</h2>
-      <p>To the maximum extent permitted by law, this Website is provided "AS IS" without warranties. Unflat shall not be liable for any damages arising from your use of or inability to use this Website.</p>
+      <p>To the maximum extent permitted by law, this Website is provided "AS IS" without warranties. unflat shall not be liable for any damages arising from your use of or inability to use this Website.</p>
       <p>If you are a consumer under the Italian Consumer Code (D.Lgs. 206/2005), nothing in these Terms limits liability for fraud, gross negligence, or any mandatory rights that cannot be waived under Italian or EU law.</p>
 
       <h2>7. Privacy</h2>
@@ -217,24 +333,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>EU consumers may use the Online Dispute Resolution platform: <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a></p>
 
       <h2>9. Contact</h2>
-      <p>Unflat S.r.l.<br>
+      <p>unflat S.r.l.<br>
       Email: <a href="mailto:info@unflat.eu">info@unflat.eu</a><br>
       Website: www.unflat.finance</p>
     </div>
   </div>
 
-  <div class="frame-31">
-    <div class="text-18">unflat | Built in Europe. Patience pays. Transparency proves it.</div>
-    <div class="links footer-links">
-      <a href="terms.html" class="text-19">Terms</a>
-      <div class="text-20">·</div>
-      <a href="privacy.html" class="text-19">Privacy</a>
-      <div class="text-20">·</div>
-      <a href="cookies.html" class="text-19">Cookies</a>
-      <div class="text-20">·</div>
-      <a href="risk.html" class="text-19">Risk</a>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html">
+            <img src="images/Vector.svg" alt="unflat" class="footer-logo">
+          </a>
+          <p class="footer-tagline">Patience pays. Transparency proves it.</p>
+        </div>
+        <div class="footer-columns">
+          <div class="footer-column">
+            <div class="footer-column-title">Company</div>
+            <ul>
+              <li><a href="index.html">About</a></li>
+              <li><a href="how-it-works.html">How it works</a></li>
+              <li><a href="blog/">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <div class="footer-column-title">Support</div>
+            <ul>
+              <li><a href="mailto:info@unflat.eu">Contact us</a></li>
+              <li><a href="privacy.html">Privacy</a></li>
+              <li><a href="terms.html">Terms</a></li>
+              <li><a href="risk.html">Risk</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <div class="footer-column-title">Follow</div>
+            <div class="footer-social">
+              <a href="https://www.linkedin.com/company/unflatfinance" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/unflatfinance" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+              <a href="https://x.com/unflatfinance" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">Disclaimer: unflat is a technology platform and is not a bank or a broker-dealer. Funds deposited through unflat are not FDIC insured and may be subject to risk, including loss of principal. Rates or earnings mentioned are variable, not guaranteed, and subject to change. Nothing on this site constitutes financial, investment, legal, or tax advice.</p>
+        <p class="footer-copyright">© 2025 unflat. All rights reserved.</p>
+      </div>
     </div>
-    <div class="text-20">© 2025 unflat</div>
-  </div>
+  </footer>
 </body>
 </html>
