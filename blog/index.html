@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -21,24 +21,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- SEO Meta Tags -->
-  <title>Blog | unflat - Guide al risparmio DeFi</title>
-  <meta name="description" content="Guide, analisi e approfondimenti sul risparmio DeFi, stablecoin e finanza decentralizzata. Scopri come far crescere i tuoi risparmi con rendimenti superiori.">
+  <title>Blog | unflat - DeFi Savings Guides</title>
+  <meta name="description" content="Guides, analysis and insights on DeFi savings, stablecoins and decentralized finance. Learn how to grow your savings with higher yields.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.unflat.finance/blog/">
 
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="en" href="https://www.unflat.finance/blog/en/" />
+  <link rel="alternate" hreflang="it" href="https://www.unflat.finance/blog/it/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.unflat.finance/blog/" />
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Blog | unflat - Guide al risparmio DeFi">
-  <meta property="og:description" content="Guide, analisi e approfondimenti sul risparmio DeFi, stablecoin e finanza decentralizzata.">
+  <meta property="og:title" content="Blog | unflat - DeFi Savings Guides">
+  <meta property="og:description" content="Guides, analysis and insights on DeFi savings, stablecoins and decentralized finance.">
   <meta property="og:url" content="https://www.unflat.finance/blog/">
   <meta property="og:site_name" content="unflat">
   <meta property="og:image" content="https://www.unflat.finance/images/webclip.png">
-  <meta property="og:locale" content="it_IT">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Blog | unflat - Guide al risparmio DeFi">
-  <meta name="twitter:description" content="Guide, analisi e approfondimenti sul risparmio DeFi, stablecoin e finanza decentralizzata.">
+  <meta name="twitter:title" content="Blog | unflat - DeFi Savings Guides">
+  <meta name="twitter:description" content="Guides, analysis and insights on DeFi savings, stablecoins and decentralized finance.">
   <meta name="twitter:image" content="https://www.unflat.finance/images/webclip.png">
 
   <!-- JSON-LD Structured Data -->
@@ -47,8 +52,9 @@
     "@context": "https://schema.org",
     "@type": "Blog",
     "name": "unflat Blog",
-    "description": "Guide, analisi e approfondimenti sul risparmio DeFi, stablecoin e finanza decentralizzata.",
+    "description": "Guides, analysis and insights on DeFi savings, stablecoins and decentralized finance.",
     "url": "https://www.unflat.finance/blog/",
+    "inLanguage": ["en", "it"],
     "publisher": {
       "@type": "Organization",
       "name": "unflat",
@@ -130,12 +136,20 @@
     .blog-page-header {
       margin-bottom: 48px;
     }
+    .blog-header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
     .blog-page-title {
       color: #f5f6ff;
       font-family: 'PP Frama', Arial, sans-serif;
       font-size: 48px;
       font-weight: 500;
-      margin-bottom: 16px;
+      margin: 0;
       line-height: 1.15;
     }
     .blog-page-subtitle {
@@ -146,7 +160,59 @@
       max-width: 600px;
     }
 
-    /* Article Cards */
+    /* Language Switcher */
+    .lang-switcher {
+      display: flex;
+      gap: 0;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 4px;
+      flex-shrink: 0;
+    }
+    .lang-switcher a {
+      color: rgba(245, 246, 255, 0.6);
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .lang-switcher a:hover {
+      color: #f5f6ff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .lang-switcher a.active {
+      color: #f5f6ff;
+      background: rgba(97, 152, 255, 0.2);
+    }
+
+    /* Section Title */
+    .section-title {
+      color: rgba(245, 246, 255, 0.5);
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Articles List */
+    .articles-section {
+      margin-bottom: 48px;
+    }
     .articles-list {
       display: flex;
       flex-direction: column;
@@ -188,6 +254,18 @@
       font-size: 11px;
       padding: 3px 10px;
       border-radius: 20px;
+    }
+    .article-card-lang {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: rgba(245, 246, 255, 0.7);
+      font-family: 'PP Frama', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .article-card-title {
@@ -383,6 +461,10 @@
       .footer-column {
         min-width: calc(50% - 16px);
       }
+      .blog-header-top {
+        flex-direction: column;
+        gap: 16px;
+      }
     }
 
     @media (max-width: 600px) {
@@ -438,36 +520,65 @@
 
     <!-- Page Header -->
     <header class="blog-page-header">
-      <h1 class="blog-page-title">Blog</h1>
-      <p class="blog-page-subtitle">Guide, analisi e approfondimenti sul risparmio DeFi, stablecoin e finanza decentralizzata per investitori italiani.</p>
+      <div class="blog-header-top">
+        <h1 class="blog-page-title">Blog</h1>
+        <div class="lang-switcher">
+          <a href="en/" class="active">EN</a>
+          <a href="it/">IT</a>
+        </div>
+      </div>
+      <p class="blog-page-subtitle">Guides, analysis and insights on DeFi savings, stablecoins and decentralized finance.</p>
     </header>
 
-    <!-- Articles List -->
-    <div class="articles-list">
+    <!-- English Articles -->
+    <section class="articles-section">
+      <div class="section-title">English</div>
+      <div class="articles-list">
+        <a href="en/best-defi-savings-accounts-high-yield-italy-2026/" class="article-card">
+          <div class="article-card-meta">
+            <time class="article-card-date" datetime="2025-01-29">January 29, 2025</time>
+            <span class="article-card-tag">Guide</span>
+          </div>
+          <h2 class="article-card-title">Best High-Yield DeFi Savings Accounts in Italy (2026)</h2>
+          <p class="article-card-excerpt">Discover the best DeFi savings accounts in Italy for 2026. Compare unflat, Nexo, YouHodler and other platforms with 4-16% APY. Complete guide for Italian investors.</p>
+          <span class="article-card-link">
+            Read article
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
 
-      <a href="migliori-conti-risparmio-defi-alto-rendimento-italia-2026/" class="article-card">
-        <div class="article-card-meta">
-          <time class="article-card-date" datetime="2025-01-29">29 Gennaio 2025</time>
-          <span class="article-card-tag">Guida</span>
-        </div>
-        <h2 class="article-card-title">Migliori conti di risparmio DeFi ad alto rendimento in Italia (2026)</h2>
-        <p class="article-card-excerpt">Scopri i migliori conti di risparmio DeFi in Italia per il 2026. Confronto tra unflat, Nexo, YouHodler e altre piattaforme con APY dal 4% al 16%. Guida completa per investitori italiani.</p>
-        <span class="article-card-link">
-          Leggi l'articolo
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </span>
-      </a>
-
-    </div>
+    <!-- Italian Articles -->
+    <section class="articles-section">
+      <div class="section-title">Italiano</div>
+      <div class="articles-list">
+        <a href="it/migliori-conti-risparmio-defi-alto-rendimento-italia-2026/" class="article-card">
+          <div class="article-card-meta">
+            <time class="article-card-date" datetime="2025-01-29">29 Gennaio 2025</time>
+            <span class="article-card-tag">Guida</span>
+          </div>
+          <h2 class="article-card-title">Migliori conti di risparmio DeFi ad alto rendimento in Italia (2026)</h2>
+          <p class="article-card-excerpt">Scopri i migliori conti di risparmio DeFi in Italia per il 2026. Confronto tra unflat, Nexo, YouHodler e altre piattaforme con APY dal 4% al 16%. Guida completa per investitori italiani.</p>
+          <span class="article-card-link">
+            Leggi l'articolo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
 
     <!-- CTA Section -->
     <div class="blog-cta">
-      <h3>Pronto a far crescere i tuoi risparmi?</h3>
-      <p>Iscriviti alla waitlist per accedere a rendimenti DeFi senza complessità.</p>
-      <a href="../index.html" class="cta-button">Unisciti alla waitlist</a>
+      <h3>Ready to grow your savings?</h3>
+      <p>Join the waitlist to access DeFi yields without complexity.</p>
+      <a href="../index.html" class="cta-button">Join the waitlist</a>
     </div>
   </main>
 

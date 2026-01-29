@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.unflat.finance/</loc>
     <lastmod>2025-01-29</lastmod>
@@ -17,12 +18,40 @@
     <lastmod>2025-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.unflat.finance/blog/en/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.unflat.finance/blog/it/"/>
   </url>
   <url>
-    <loc>https://www.unflat.finance/blog/migliori-conti-risparmio-defi-alto-rendimento-italia-2026/</loc>
+    <loc>https://www.unflat.finance/blog/en/</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.unflat.finance/blog/en/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.unflat.finance/blog/it/"/>
+  </url>
+  <url>
+    <loc>https://www.unflat.finance/blog/it/</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.unflat.finance/blog/it/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.unflat.finance/blog/en/"/>
+  </url>
+  <url>
+    <loc>https://www.unflat.finance/blog/en/best-defi-savings-accounts-high-yield-italy-2026/</loc>
     <lastmod>2025-01-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.unflat.finance/blog/en/best-defi-savings-accounts-high-yield-italy-2026/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.unflat.finance/blog/it/migliori-conti-risparmio-defi-alto-rendimento-italia-2026/"/>
+  </url>
+  <url>
+    <loc>https://www.unflat.finance/blog/it/migliori-conti-risparmio-defi-alto-rendimento-italia-2026/</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.unflat.finance/blog/it/migliori-conti-risparmio-defi-alto-rendimento-italia-2026/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.unflat.finance/blog/en/best-defi-savings-accounts-high-yield-italy-2026/"/>
   </url>
   <url>
     <loc>https://www.unflat.finance/privacy.html</loc>
