@@ -10,5 +10,44 @@
       "destination": "/blog/it/migliori-conti-risparmio-defi-alto-rendimento-italia-2026/",
       "permanent": true
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/b",
+      "destination": "/b/index.html"
+    },
+    {
+      "source": "/b/",
+      "destination": "/b/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/b/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/b/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/b/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
   ]
 }

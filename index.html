@@ -16,6 +16,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('js', new Date());
 
   gtag('config', 'G-QT9ZNTFJV1');
+
+  // A/B Test: identify this as variant A
+  window.dataLayer.push({
+    'event': 'ab_test_variant',
+    'ab_test_name': 'landing_page_redesign',
+    'ab_test_variant': 'A'
+  });
 </script>
   <meta charset="utf-8">
   <title>unflat</title>
