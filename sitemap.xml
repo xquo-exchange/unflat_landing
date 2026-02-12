@@ -54,6 +54,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.unflat.finance/blog/en/best-defi-savings-accounts-high-yield-italy-2026/"/>
   </url>
   <url>
+    <loc>https://www.unflat.finance/llms.txt</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.unflat.finance/llms-full.txt</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://www.unflat.finance/privacy.html</loc>
     <lastmod>2025-01-29</lastmod>
     <changefreq>yearly</changefreq>
