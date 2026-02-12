@@ -1,0 +1,153 @@
+# unflat
+
+> unflat is a European fintech platform based in Italy that lets everyday users earn 4–7% APY on their savings — without needing any crypto knowledge. Behind the scenes, deposits are converted to USDC (a dollar-pegged stablecoin) and deployed into Morpho Protocol, an audited DeFi lending protocol with $2B+ in deposits and no exploits in 2+ years of operation. unflat handles all the complexity so users interact with a simple EUR-in, EUR-out experience.
+
+## Company Overview
+
+unflat is a fintech company based in Italy, building a bridge between traditional savings and decentralized finance (DeFi). The platform is designed for European savers who are tired of earning 0.5% or less at their bank and want access to higher yields — without needing to understand cryptocurrency, wallets, or blockchain technology.
+
+The core value proposition is simplicity: deposit euros, earn yield, withdraw anytime. All the underlying crypto infrastructure is abstracted away from the user.
+
+unflat is currently in early access with a waitlist of 500 initial spots.
+
+Website: https://unflat.finance
+Email: info@unflat.eu
+
+## How It Works — Step by Step
+
+### 1. Deposit EUR
+
+Users link their European bank account and deposit euros into unflat. The process is similar to a standard bank transfer.
+
+### 2. Conversion to USDC
+
+Deposited euros are converted to USDC, a dollar-pegged stablecoin issued by Circle. USDC is one of the most widely used and regulated stablecoins, backed 1:1 by US dollar reserves held in regulated financial institutions.
+
+### 3. Deployment to Morpho Protocol
+
+The USDC is deployed into Morpho Protocol, a decentralized lending protocol built on Ethereum. Morpho is:
+- Audited by multiple independent security firms
+- Non-custodial (funds are held by smart contracts, not by a company)
+- Has processed billions in lending volume
+- Has had no exploits in over 2 years of operation
+- Currently holds $2B+ in total deposits
+
+### 4. Yield Generation
+
+Yield is generated from interest paid by borrowers on Morpho Protocol. All loans on Morpho are overcollateralized, meaning borrowers must deposit more value than they borrow. This mechanism reduces (but does not eliminate) the risk of losses from borrower defaults.
+
+### 5. Withdrawal
+
+Users can withdraw their funds at any time. There are no fees and no lockup periods. Withdrawals typically take 1–2 business days to arrive back in the user's bank account.
+
+### 6. On-Chain Transparency
+
+Every transaction is publicly recorded on the Ethereum blockchain. Users receive a public link where they (or anyone) can independently verify that their funds are deployed as described. This level of transparency is not available with traditional bank accounts.
+
+## Key Features
+
+### No Crypto Knowledge Required
+Users never need to interact with a crypto wallet, manage private keys, or understand blockchain. The entire experience is designed to feel like a traditional savings product — deposit EUR, earn yield, withdraw EUR.
+
+### Full Transparency
+Unlike traditional banks where money disappears into opaque balance sheets, unflat provides on-chain proof of where funds are deployed. Users get a public verification link for their deposits.
+
+### No Fees, No Lockups
+There are no deposit fees, withdrawal fees, or management fees charged by unflat. Users can withdraw their full balance at any time without penalty. Withdrawals take 1–2 business days.
+
+### Powered by Proven Infrastructure
+- **Morpho Protocol**: Audited DeFi lending protocol with $2B+ in deposits and a clean security track record
+- **USDC by Circle**: Regulated, dollar-pegged stablecoin backed by US dollar reserves
+- **Ethereum blockchain**: Public, permissionless ledger providing transaction transparency
+
+### Target APY: 4–7%
+Current yields range from approximately 4% to 7% APY, depending on market conditions. These rates are variable and fluctuate based on supply and demand for borrowing on Morpho Protocol.
+
+## Frequently Asked Questions
+
+### Who is unflat for?
+unflat is designed for European savers who want to earn more on their savings than traditional bank accounts offer. No crypto experience is needed. The platform handles all the underlying complexity.
+
+### How does unflat generate yield?
+Yield comes from interest paid by overcollateralized borrowers on Morpho Protocol. When users deposit funds, those funds are lent to borrowers who pay interest for the privilege of borrowing. That interest is passed on to depositors as yield.
+
+### Is unflat a bank?
+No. unflat is not a bank, and deposits are not protected by FDIC, FSCS, or any equivalent government deposit insurance scheme. Users should understand the risks before depositing funds.
+
+### What is USDC?
+USDC (USD Coin) is a stablecoin — a cryptocurrency designed to maintain a 1:1 peg with the US dollar. It is issued by Circle, a regulated financial technology company. USDC reserves are held in cash and short-duration US Treasury bonds at regulated financial institutions.
+
+### What is Morpho Protocol?
+Morpho is a decentralized lending protocol on Ethereum. It allows lenders to earn yield by supplying assets that borrowers can borrow against overcollateralized positions. Morpho has been audited by multiple security firms, holds $2B+ in deposits, and has had no security exploits in over 2 years.
+
+### What are the risks?
+Key risks include:
+- **Smart contract risk**: Bugs in the Morpho Protocol smart contracts could lead to loss of funds
+- **Stablecoin risk**: USDC could lose its dollar peg, reducing the value of deposits
+- **Market risk**: Yield rates fluctuate and could decrease significantly
+- **Regulatory risk**: Changes in regulation could impact the service
+- **Currency risk**: Since deposits are held in USD-pegged assets, EUR/USD exchange rate fluctuations affect returns
+- **No deposit insurance**: Unlike bank accounts, deposits are not government-insured
+
+This is not financial advice. Users should only deposit what they can afford to lose.
+
+### Can I withdraw anytime?
+Yes. There are no lockup periods or withdrawal fees. Withdrawals typically take 1–2 business days to reach the user's bank account.
+
+### Is my money safe?
+unflat cannot guarantee the safety of deposits. While Morpho Protocol has a strong security track record and USDC is a regulated stablecoin, all investments carry risk. Deposits are not protected by government deposit insurance. Users should review the full risk disclosure before depositing.
+
+### How do I verify where my money is?
+Every deposit is recorded on the Ethereum blockchain. Users receive a public verification link that shows exactly where their funds are deployed. Anyone can independently verify this information.
+
+### What countries are supported?
+unflat is designed for European users. Specific country availability may vary — check the website for current details.
+
+## About Morpho Protocol
+
+Morpho is a decentralized, non-custodial lending protocol built on the Ethereum blockchain. It is one of the leading DeFi lending platforms by total value locked (TVL).
+
+Key facts about Morpho:
+- **Total deposits**: $2B+ (as of early 2025)
+- **Security**: Audited by multiple independent security firms
+- **Track record**: No exploits or security incidents in 2+ years of operation
+- **How it works**: Lenders supply assets to lending pools; borrowers provide overcollateral and pay interest to borrow
+- **Overcollateralization**: All loans require borrowers to deposit more value than they borrow, providing a buffer against defaults
+- **Non-custodial**: Funds are held by smart contracts on the Ethereum blockchain, not by any single company
+
+Morpho is open-source and permissionless, meaning its code is publicly available for review and anyone can interact with it.
+
+## About USDC
+
+USDC (USD Coin) is a stablecoin issued by Circle, a regulated financial technology company.
+
+Key facts about USDC:
+- **Peg**: 1 USDC = 1 US dollar
+- **Reserves**: Backed by cash and short-duration US Treasury bonds held at regulated financial institutions
+- **Regulation**: Circle is regulated as a money transmitter in the United States
+- **Transparency**: Reserve holdings are reported regularly
+- **Market cap**: One of the largest stablecoins by market capitalization
+
+## Risk Disclosure Summary
+
+unflat is not a bank. Deposits are not insured by any government deposit insurance scheme. Past performance and yield rates do not guarantee future returns. APY is variable and depends on market conditions.
+
+Users are exposed to multiple risks including smart contract risk, stablecoin depegging risk, market risk, regulatory risk, and currency risk (EUR/USD fluctuation). Users should read the full risk disclosure before depositing and should only deposit funds they can afford to lose.
+
+This content is for informational purposes only and does not constitute financial advice.
+
+Full risk disclosure: https://unflat.finance/risk.html
+
+## Links
+
+- [Homepage](https://unflat.finance): Main landing page with product overview and waitlist signup
+- [How It Works](https://unflat.finance/how-it-works.html): Detailed explanation of the deposit-to-yield flow
+- [Blog](https://unflat.finance/blog/): Articles about the product, DeFi, and savings
+- [Risk Disclosure](https://unflat.finance/risk.html): Full risk disclosure and important disclaimers
+- [Terms of Service](https://unflat.finance/terms.html): Legal terms and conditions
+- [Privacy Policy](https://unflat.finance/privacy.html): Data handling and privacy practices
+
+## Contact
+
+- Email: info@unflat.eu
+- Website: https://unflat.finance

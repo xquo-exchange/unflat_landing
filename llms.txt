@@ -1,0 +1,48 @@
+# unflat
+
+> unflat is a European fintech platform that lets everyday users earn 4–7% APY on their savings — without needing any crypto knowledge. Deposits are converted to USDC and deployed into Morpho Protocol, an audited DeFi lending protocol. Based in Italy, unflat targets European savers looking for higher returns than traditional bank accounts.
+
+## How It Works
+
+- Users deposit EUR from their bank account
+- Funds are converted to USDC, a dollar-pegged stablecoin issued by Circle
+- USDC is lent to overcollateralized borrowers via Morpho Protocol
+- Yield is generated from interest paid by borrowers
+- Withdrawals are available anytime with no fees or lockups (1–2 business days back to bank)
+- Every transaction is publicly recorded on-chain; users receive a public link to verify their deposits
+
+## Key Features
+
+- **No crypto knowledge required**: users interact with a simple EUR-in, EUR-out interface
+- **Transparent**: all transactions are verifiable on-chain via a public link
+- **No fees, no lockups**: withdraw anytime, no hidden charges
+- **Powered by Morpho Protocol**: $2B+ in deposits, audited, no exploits in 2+ years of operation
+- **USDC-based**: deposits are held in USDC, a regulated dollar-pegged stablecoin by Circle
+- **Early access**: currently in waitlist phase with 500 initial spots
+
+## Risk & Disclaimers
+
+- unflat is not a bank and deposits are not covered by FDIC or equivalent deposit insurance
+- Past yields do not guarantee future returns; APY fluctuates based on market conditions
+- Users are exposed to smart contract risk, stablecoin risk, and market risk
+- This is not financial advice — users should only deposit what they can afford to lose
+- Full risk disclosure available at the link below
+
+## Links
+
+- [Homepage](https://unflat.finance): Main landing page with product overview and waitlist signup
+- [How It Works](https://unflat.finance/how-it-works.html): Detailed explanation of the deposit-to-yield flow
+- [Blog](https://unflat.finance/blog/): Articles about the product, DeFi, and savings
+- [Risk Disclosure](https://unflat.finance/risk.html): Full risk disclosure and important disclaimers
+- [Terms of Service](https://unflat.finance/terms.html): Legal terms and conditions
+- [Privacy Policy](https://unflat.finance/privacy.html): Data handling and privacy practices
+
+## Optional
+
+- [Terms of Service](https://unflat.finance/terms.html): Full legal terms
+- [Privacy Policy](https://unflat.finance/privacy.html): Privacy and data handling details
+
+## Contact
+
+- Email: info@unflat.eu
+- Website: https://unflat.finance
